@@ -1,11 +1,10 @@
-import { eq } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, leads, InsertLead, Lead } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
-// Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
@@ -89,4 +88,28 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// ---- Lead helpers ----
+
+export async function createLead(lead: InsertLead): Promise<Lead | null> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create lead: database not available");
+    return null;
+  }
+
+  try {
+    await db.insert(leads).values(lead);
+    // Get the last inserted lead
+    const result = await db.select().from(leads).orderBy(desc(leads.id)).limit(1);
+    return result.length > 0 ? result[0] : null;
+  } catch (error) {
+    console.error("[Database] Failed to create lead:", error);
+    throw error;
+  }
+}
+
+export async function getLeads(limit = 50) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(leads).orderBy(desc(leads.createdAt)).limit(limit);
+}
