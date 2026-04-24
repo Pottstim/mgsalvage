@@ -39,6 +39,30 @@ describe("seoMiddleware.injectSEO", () => {
     expect(result).toContain('property="og:url"');
   });
 
+  it("injects meta keywords tag on homepage", () => {
+    const result = injectSEO(TEMPLATE, "/");
+    expect(result).toContain('<meta name="keywords"');
+    expect(result).toContain('junk car removal');
+    expect(result).toContain('cash for junk cars');
+    expect(result).toContain('Sanford NC');
+    expect(result).toContain('free towing');
+    expect(result).toContain('MG Salvage');
+  });
+
+  it("injects page-specific keywords for each route", () => {
+    const sellResult = injectSEO(TEMPLATE, "/sell-your-junk-car");
+    expect(sellResult).toContain('sell junk car');
+    expect(sellResult).toContain('junk car estimate');
+
+    const b2bResult = injectSEO(TEMPLATE, "/business-vehicle-removal");
+    expect(b2bResult).toContain('lot clearing');
+    expect(b2bResult).toContain('commercial vehicle removal');
+
+    const cityResult = injectSEO(TEMPLATE, "/service-areas/sanford");
+    expect(cityResult).toContain('junk car removal Sanford');
+    expect(cityResult).toContain('Lee County');
+  });
+
   it("injects JSON-LD LocalBusiness schema with geo and hasOfferCatalog", () => {
     const result = injectSEO(TEMPLATE, "/");
     expect(result).toContain('"@type":"LocalBusiness"');

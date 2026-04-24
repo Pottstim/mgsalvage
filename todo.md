@@ -82,3 +82,7 @@
 - [x] Disable X-Powered-By header
 - [x] Vitest tests for SEO middleware (11 tests)
 - [x] Compile technical audit report (AUDIT_REPORT.md)
+
+## SEO Keyword Fixes
+- [x] Add meta keywords tag to homepage via server-side SEO middleware
+- [x] Add meta keywords tags to all pages (server-side + client-side)

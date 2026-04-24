@@ -5,10 +5,11 @@ interface SEOHeadProps {
   title: string;
   description: string;
   canonical?: string;
+  keywords?: string;
   schemas?: Record<string, unknown>[];
 }
 
-export default function SEOHead({ title, description, canonical, schemas }: SEOHeadProps) {
+export default function SEOHead({ title, description, canonical, keywords, schemas }: SEOHeadProps) {
   useEffect(() => {
     document.title = `${title} | MG Salvage`;
     
@@ -20,6 +21,17 @@ export default function SEOHead({ title, description, canonical, schemas }: SEOH
       document.head.appendChild(metaDesc);
     }
     metaDesc.setAttribute("content", description);
+
+    // Meta keywords
+    if (keywords) {
+      let metaKw = document.querySelector('meta[name="keywords"]');
+      if (!metaKw) {
+        metaKw = document.createElement("meta");
+        metaKw.setAttribute("name", "keywords");
+        document.head.appendChild(metaKw);
+      }
+      metaKw.setAttribute("content", keywords);
+    }
 
     // Open Graph tags
     const ogTags: Record<string, string> = {
