@@ -67,3 +67,18 @@
 ## Testing
 - [x] Vitest tests for lead submission API
 - [x] Vitest tests for n8n webhook integration
+
+## Technical SEO Audit & Fixes
+- [x] Audit SSR/SSG status — verified CSR-only, implemented server-side meta injection
+- [x] Audit dynamic meta tag injection — implemented server-side SEO middleware
+- [x] Server-side meta injection middleware (title, description, canonical, OG, JSON-LD per route)
+- [x] Validate JSON-LD schema markup format and placement in <head>
+- [x] Enhanced JSON-LD schemas (geo, @id, hasOfferCatalog, paymentAccepted, serviceType)
+- [x] Fix aggregateRating reviewCount to match actual testimonial count
+- [x] Semantic HTML improvements (address element in footer, article elements for reviews)
+- [x] robots.txt with sitemap reference and API/404 disallow
+- [x] sitemap.xml with all 17 pages and correct priorities
+- [x] Security headers (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)
+- [x] Disable X-Powered-By header
+- [x] Vitest tests for SEO middleware (11 tests)
+- [x] Compile technical audit report (AUDIT_REPORT.md)

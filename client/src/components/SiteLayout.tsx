@@ -151,7 +151,7 @@ function Footer() {
             <p className="text-sm text-white/60 mb-4 leading-relaxed">
               Professional salvage and vehicle acquisition company serving central North Carolina. Fast cash, free towing, honest service.
             </p>
-            <div className="flex flex-col gap-2 text-sm">
+            <address className="flex flex-col gap-2 text-sm not-italic">
               <a href={`tel:${COMPANY.phoneRaw}`} className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
                 <Phone className="w-4 h-4" />
                 {COMPANY.phone}
@@ -168,7 +168,7 @@ function Footer() {
                 <Clock className="w-4 h-4" />
                 {COMPANY.hours}
               </span>
-            </div>
+            </address>
           </div>
 
           {/* Quick Links */}

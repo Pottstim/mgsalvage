@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { COMPANY } from "@/lib/siteData";
+import { COMPANY, TESTIMONIALS } from "@/lib/siteData";
 
 interface SEOHeadProps {
   title: string;
@@ -75,13 +75,16 @@ export default function SEOHead({ title, description, canonical, schemas }: SEOH
   return null;
 }
 
-// Reusable schema generators
+// ── Reusable schema generators ──────────────────────────────────────────
+
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://mgsalvage.com/#business",
     name: COMPANY.name,
     description: COMPANY.description,
+    url: "https://mgsalvage.com",
     telephone: COMPANY.phone,
     email: COMPANY.email,
     address: {
@@ -90,6 +93,11 @@ export function localBusinessSchema() {
       addressRegion: "NC",
       postalCode: "27330",
       addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 35.4799,
+      longitude: -79.1803,
     },
     areaServed: [
       { "@type": "City", name: "Sanford", containedInPlace: { "@type": "State", name: "North Carolina" } },
@@ -100,6 +108,18 @@ export function localBusinessSchema() {
     ],
     openingHours: "Mo-Sa 08:00-18:00",
     priceRange: "$$",
+    paymentAccepted: "Cash",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Vehicle Acquisition Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Junk Car Removal" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cash for Junk Cars" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Vehicle Removal" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lot Clearing" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Free Towing" } },
+      ],
+    },
   };
 }
 
@@ -109,9 +129,11 @@ export function serviceSchema(name: string, description: string) {
     "@type": "Service",
     name,
     description,
+    serviceType: name,
     provider: {
       "@type": "LocalBusiness",
       name: COMPANY.name,
+      "@id": "https://mgsalvage.com/#business",
     },
     areaServed: {
       "@type": "GeoCircle",
@@ -120,7 +142,7 @@ export function serviceSchema(name: string, description: string) {
         latitude: 35.4799,
         longitude: -79.1803,
       },
-      geoRadius: "80467", // 50 miles in meters
+      geoRadius: "80467",
     },
   };
 }
@@ -157,17 +179,19 @@ export function breadcrumbSchema(items: { name: string; url?: string }[]) {
 }
 
 export function aggregateRatingSchema() {
+  const count = String(TESTIMONIALS.length);
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://mgsalvage.com/#business",
     name: COMPANY.name,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "47",
-      reviewCount: "47",
+      ratingCount: count,
+      reviewCount: count,
     },
   };
 }

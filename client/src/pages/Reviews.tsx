@@ -42,7 +42,7 @@ export default function Reviews() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="bg-white rounded-xl border border-border p-6">
+              <article key={i} className="bg-white rounded-xl border border-border p-6">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} className="w-4 h-4 text-primary fill-primary" />
@@ -58,7 +58,7 @@ export default function Reviews() {
                     <p className="text-xs text-muted-foreground">{t.location} &middot; {t.type}</p>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
