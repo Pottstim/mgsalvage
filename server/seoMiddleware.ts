@@ -391,6 +391,9 @@ export function injectSEO(html: string, pathname: string): string {
   tags.push(`<meta property="og:type" content="website" />`);
   tags.push(`<meta property="og:site_name" content="MG Salvage" />`);
   tags.push(`<meta property="og:url" content="${DOMAIN}${meta.canonical}" />`);
+  tags.push(`<meta property="og:image" content="${DOMAIN}/manus-storage/og-image_144fea9d.png" />`);
+  tags.push(`<meta property="og:image:width" content="1200" />`);
+  tags.push(`<meta property="og:image:height" content="630" />`);
 
   // JSON-LD schemas
   for (const schema of meta.schemas) {

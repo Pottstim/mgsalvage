@@ -38,15 +38,11 @@ function Header() {
       <TopBar />
       <div className="container flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>MG</span>
-          </div>
-          <div>
-            <span className="font-bold text-lg text-foreground leading-none block" style={{ fontFamily: "var(--font-heading)" }}>
-              MG Salvage
-            </span>
-            <span className="text-[11px] text-muted-foreground leading-none">Sanford, NC</span>
-          </div>
+          <img
+            src="/manus-storage/mg-salvage-header-light_644342ce.png"
+            alt="MG Salvage"
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -141,12 +137,11 @@ function Footer() {
           {/* Company */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-base" style={{ fontFamily: "var(--font-heading)" }}>MG</span>
-              </div>
-              <span className="font-bold text-lg text-white" style={{ fontFamily: "var(--font-heading)" }}>
-                MG Salvage
-              </span>
+              <img
+                src="/manus-storage/mg-salvage-header-dark_0b5328ef.png"
+                alt="MG Salvage"
+                className="h-11 w-auto"
+              />
             </div>
             <p className="text-sm text-white/60 mb-4 leading-relaxed">
               Professional salvage and vehicle acquisition company serving central North Carolina. Fast cash, free towing, honest service.

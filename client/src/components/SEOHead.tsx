@@ -39,6 +39,9 @@ export default function SEOHead({ title, description, canonical, keywords, schem
       "og:description": description,
       "og:type": "website",
       "og:site_name": "MG Salvage",
+      "og:image": "https://mgsalvage.com/manus-storage/og-image_144fea9d.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
     };
     if (canonical) {
       ogTags["og:url"] = `https://mgsalvage.com${canonical}`;

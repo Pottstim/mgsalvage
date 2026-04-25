@@ -86,3 +86,15 @@
 ## SEO Keyword Fixes
 - [x] Add meta keywords tag to homepage via server-side SEO middleware
 - [x] Add meta keywords tags to all pages (server-side + client-side)
+
+## Logo Implementation
+- [x] Upscale logo to high resolution (2x, 4x)
+- [x] Generate transparent PNG variant for header (light bg)
+- [x] Generate dark-bg variant for footer/hero
+- [x] Generate favicon (16x16, 32x32, 192x192, 512x512, .ico)
+- [x] Generate OG image (1200x630)
+- [x] Upload all logo assets via manus-upload-file --webdev
+- [x] Implement logo in website header (SiteLayout.tsx)
+- [x] Implement logo in website footer (SiteLayout.tsx)
+- [x] Update favicon in index.html
+- [x] Add OG image meta tag to SEO middleware (server-side + client-side)
