@@ -7,10 +7,15 @@ import { useMemo } from "react";
 function Hero() {
   return (
     <section className="relative bg-[oklch(0.13_0.01_250)] overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 25% 50%, oklch(0.65 0.19 45 / 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 50%, oklch(0.65 0.19 45 / 0.15) 0%, transparent 50%)"
-        }} />
+      {/* Hero background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/GjYzbfxrP6TSmFLuqUtnvn/hero-bg-6SCPsuoBeCP6oRZx4VWvDj.webp"
+          alt="Tow truck hauling a damaged vehicle on a North Carolina road at sunset"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.13_0.01_250)] via-[oklch(0.13_0.01_250/0.85)] to-[oklch(0.13_0.01_250/0.5)]" />
       </div>
       <div className="container relative py-20 md:py-28">
         <div className="max-w-3xl">

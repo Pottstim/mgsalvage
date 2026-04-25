@@ -107,3 +107,8 @@
 - [x] Add server-side H1 with primary keyword in root div
 - [x] Add server-side content fallback text for non-JS crawlers
 - [x] Add server-side semantic HTML skeleton (main, nav, header, footer landmarks)
+
+## Hero Background Image
+- [x] Generate professional hero background image for homepage
+- [x] Hero image hosted via persistent webdev CDN asset URL
+- [x] Implement hero image in Home.tsx with proper overlay/opacity
