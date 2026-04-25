@@ -113,4 +113,58 @@ describe("seoMiddleware.injectSEO", () => {
     expect(result).toContain('"@type":"AggregateRating"');
     expect(result).toContain('"ratingValue":"4.9"');
   });
+
+  // SSR fallback content tests
+  it("injects H1 tag inside root div for homepage", () => {
+    const result = injectSEO(TEMPLATE, "/");
+    expect(result).toContain("<h1>");
+    expect(result).toContain("Fast Cash for Your Junk Car");
+    expect(result).not.toContain('<div id="root"></div>');
+  });
+
+  it("injects semantic HTML landmarks (header, nav, main, footer) for homepage", () => {
+    const result = injectSEO(TEMPLATE, "/");
+    expect(result).toContain("<header>");
+    expect(result).toContain('<nav aria-label="Main navigation">');
+    expect(result).toContain("<main>");
+    expect(result).toContain("<footer>");
+    expect(result).toContain("<address>");
+  });
+
+  it("injects navigation links in SSR content", () => {
+    const result = injectSEO(TEMPLATE, "/");
+    expect(result).toContain('<a href="/sell-your-junk-car">Sell Your Junk Car</a>');
+    expect(result).toContain('<a href="/faq">FAQ</a>');
+    expect(result).toContain('<a href="/contact">Contact</a>');
+  });
+
+  it("injects SSR content with keyword-rich body text for homepage", () => {
+    const result = injectSEO(TEMPLATE, "/");
+    expect(result).toContain("free towing");
+    expect(result).toContain("same-day pickup");
+    expect(result).toContain("Sanford, Fayetteville, Pittsboro, Carthage, Lillington");
+  });
+
+  it("injects SSR fallback for all page routes", () => {
+    const routes = [
+      "/sell-your-junk-car",
+      "/junk-car-removal",
+      "/business-vehicle-removal",
+      "/business-vehicle-removal/mechanic-shops",
+      "/service-areas",
+      "/service-areas/sanford",
+      "/faq",
+      "/about",
+      "/reviews",
+      "/contact",
+    ];
+    for (const route of routes) {
+      const result = injectSEO(TEMPLATE, route);
+      expect(result).toContain("<h1>");
+      expect(result).toContain("<header>");
+      expect(result).toContain("<main>");
+      expect(result).toContain("<footer>");
+      expect(result).not.toContain('<div id="root"></div>');
+    }
+  });
 });

@@ -102,3 +102,8 @@
 ## SEO Keyword Optimization
 - [x] Reduce homepage keywords from 12 to 6 focused terms
 - [x] Reduce keywords on all other pages to 3-8 range
+
+## SSR Fallback for Non-JS Crawlers
+- [x] Add server-side H1 with primary keyword in root div
+- [x] Add server-side content fallback text for non-JS crawlers
+- [x] Add server-side semantic HTML skeleton (main, nav, header, footer landmarks)
