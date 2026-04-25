@@ -52,7 +52,7 @@ describe("seoMiddleware.injectSEO", () => {
   it("injects page-specific keywords for each route", () => {
     const sellResult = injectSEO(TEMPLATE, "/sell-your-junk-car");
     expect(sellResult).toContain('sell junk car');
-    expect(sellResult).toContain('junk car estimate');
+    expect(sellResult).toContain('junk car value');
 
     const b2bResult = injectSEO(TEMPLATE, "/business-vehicle-removal");
     expect(b2bResult).toContain('lot clearing');

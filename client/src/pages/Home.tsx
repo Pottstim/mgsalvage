@@ -321,7 +321,7 @@ export default function Home() {
         title="Cash for Junk Cars | Free Towing | Sanford NC"
         description="MG Salvage buys junk cars, offers free towing, and provides fast cash offers in Sanford, NC and surrounding areas. Get your free estimate today."
         canonical="/"
-        keywords="junk car removal, cash for junk cars, sell junk car, free towing, junk car buyer, Sanford NC, scrap car removal, same-day pickup, junk vehicle removal, sell my car for cash, unwanted vehicle removal, MG Salvage"
+        keywords="junk car removal Sanford NC, cash for junk cars, sell junk car, free towing, same-day pickup, MG Salvage"
         schemas={schemas}
       />
       <Hero />

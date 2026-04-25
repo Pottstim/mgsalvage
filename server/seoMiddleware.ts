@@ -179,7 +179,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "MG Salvage buys junk cars, offers free towing, and provides fast cash offers in Sanford, NC and surrounding areas. Get your free estimate today.",
       canonical: "/",
-      keywords: "junk car removal, cash for junk cars, sell junk car, free towing, junk car buyer, Sanford NC, scrap car removal, same-day pickup, junk vehicle removal, sell my car for cash, unwanted vehicle removal, MG Salvage",
+      keywords: "junk car removal Sanford NC, cash for junk cars, sell junk car, free towing, same-day pickup, MG Salvage",
       schemas: [
         localBusinessSchema(),
         aggregateRatingSchema(),
@@ -195,7 +195,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "Get a free, no-obligation cash offer for your junk car. MG Salvage offers free towing, same-day pickup, and instant payment in Sanford, NC and surrounding areas.",
       canonical: "/sell-your-junk-car",
-      keywords: "sell junk car, cash for junk cars, junk car estimate, free car estimate, sell my car for cash, junk car value, Sanford NC, free towing",
+      keywords: "sell junk car, cash for junk cars, free car estimate, junk car value, Sanford NC",
       schemas: [
         serviceSchema("Sell Your Junk Car", "Get a free cash offer for your junk, damaged, or unwanted vehicle with free towing and same-day pickup."),
         breadcrumbSchema([{ name: "Sell Your Junk Car", url: "/sell-your-junk-car" }]),
@@ -210,7 +210,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "Professional junk car removal with free towing across central North Carolina. MG Salvage picks up vehicles in any condition \u2014 running or not.",
       canonical: "/junk-car-removal",
-      keywords: "junk car removal, free car towing, junk vehicle pickup, scrap car removal, non-running car removal, central North Carolina, free pickup",
+      keywords: "junk car removal, free towing, non-running car removal, central North Carolina",
       schemas: [
         serviceSchema("Junk Car Removal", "Professional junk car removal with free towing across central North Carolina."),
         breadcrumbSchema([{ name: "Junk Car Removal", url: "/junk-car-removal" }]),
@@ -262,7 +262,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "MG Salvage serves a 50-mile radius from Sanford, NC including Fayetteville, Pittsboro, Carthage, and Lillington. Find junk car removal near you.",
       canonical: "/service-areas",
-      keywords: "junk car removal near me, service areas, Sanford NC, Fayetteville NC, Pittsboro NC, Carthage NC, Lillington NC, central North Carolina junk car buyer",
+      keywords: "junk car removal near me, service areas, Sanford NC, central North Carolina",
       schemas: [
         localBusinessSchema(),
         breadcrumbSchema([{ name: "Service Areas", url: "/service-areas" }]),
@@ -300,7 +300,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "Find answers to common questions about selling your junk car, our towing process, payment, paperwork, and service areas.",
       canonical: "/faq",
-      keywords: "junk car FAQ, sell junk car questions, junk car title, free towing FAQ, junk car process, vehicle removal questions",
+      keywords: "junk car FAQ, sell junk car questions, junk car title, free towing",
       schemas: [
         breadcrumbSchema([{ name: "FAQ", url: "/faq" }]),
         faqPageSchema(),
@@ -315,7 +315,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "Learn about MG Salvage \u2014 a professional salvage and vehicle acquisition company headquartered in Sanford, NC, serving central North Carolina since 2020.",
       canonical: "/about",
-      keywords: "about MG Salvage, Sanford NC salvage company, junk car buyer, vehicle acquisition, central North Carolina",
+      keywords: "about MG Salvage, Sanford NC salvage company, junk car buyer",
       schemas: [
         localBusinessSchema(),
         breadcrumbSchema([{ name: "About", url: "/about" }]),
@@ -330,7 +330,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "Read real reviews from consumers and businesses who have sold their junk cars to MG Salvage. Rated 4.9 out of 5 stars.",
       canonical: "/reviews",
-      keywords: "MG Salvage reviews, junk car buyer reviews, customer testimonials, Sanford NC reviews, junk car removal ratings",
+      keywords: "MG Salvage reviews, junk car buyer reviews, customer testimonials",
       schemas: [
         aggregateRatingSchema(),
         breadcrumbSchema([{ name: "Reviews", url: "/reviews" }]),
@@ -345,7 +345,7 @@ function getRouteMeta(pathname: string): RouteMeta {
       description:
         "Contact MG Salvage for a free junk car estimate, schedule a pickup, or request urgent same-day service. Call or fill out our form.",
       canonical: "/contact",
-      keywords: "contact MG Salvage, junk car estimate, schedule pickup, same-day pickup, Sanford NC junk car removal",
+      keywords: "contact MG Salvage, junk car estimate, schedule pickup, Sanford NC",
       schemas: [
         localBusinessSchema(),
         breadcrumbSchema([{ name: "Contact", url: "/contact" }]),
@@ -359,7 +359,7 @@ function getRouteMeta(pathname: string): RouteMeta {
     description:
       "MG Salvage buys junk cars, offers free towing, and provides fast cash offers in Sanford, NC and surrounding areas.",
     canonical: pathname,
-    keywords: "junk car removal, cash for junk cars, free towing, Sanford NC, MG Salvage",
+    keywords: "junk car removal, cash for junk cars, Sanford NC, MG Salvage",
     schemas: [],
   };
 }

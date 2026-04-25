@@ -98,3 +98,7 @@
 - [x] Implement logo in website footer (SiteLayout.tsx)
 - [x] Update favicon in index.html
 - [x] Add OG image meta tag to SEO middleware (server-side + client-side)
+
+## SEO Keyword Optimization
+- [x] Reduce homepage keywords from 12 to 6 focused terms
+- [x] Reduce keywords on all other pages to 3-8 range
