@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,20 +13,14 @@ interface ConsumerFormProps {
 
 export default function ConsumerForm({ source = "website" }: ConsumerFormProps) {
   const [submitted, setSubmitted] = useState(false);
-  const mutation = trpc.leads.submitConsumer.useMutation({
-    onSuccess: () => {
-      setSubmitted(true);
-      toast.success("Estimate request submitted! We'll be in touch shortly.");
-    },
-    onError: (err) => {
-      toast.error(err.message || "Something went wrong. Please try again.");
-    },
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     const fd = new FormData(e.currentTarget);
-    mutation.mutate({
+    const data = {
       name: fd.get("name") as string,
       phone: fd.get("phone") as string,
       email: (fd.get("email") as string) || "",
@@ -39,7 +32,19 @@ export default function ConsumerForm({ source = "website" }: ConsumerFormProps) 
       titleStatus: (fd.get("titleStatus") as string) || "",
       notes: (fd.get("notes") as string) || "",
       source,
-    });
+      leadType: "consumer",
+      submittedAt: new Date().toISOString(),
+    };
+    
+    console.log("Lead submitted:", data);
+    
+    // TODO: Wire to Google Sheets + Email
+    // For now, just show success
+    setTimeout(() => {
+      setSubmitted(true);
+      toast.success("Estimate request submitted! We'll be in touch shortly.");
+      setIsSubmitting(false);
+    }, 500);
   };
 
   if (submitted) {
@@ -139,8 +144,8 @@ export default function ConsumerForm({ source = "website" }: ConsumerFormProps) 
         <Textarea id="notes" name="notes" placeholder="Anything else we should know about your vehicle?" rows={3} />
       </div>
 
-      <Button type="submit" className="w-full mt-6" size="lg" disabled={mutation.isPending}>
-        {mutation.isPending ? (
+      <Button type="submit" className="w-full mt-6" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin mr-2" />
             Submitting...

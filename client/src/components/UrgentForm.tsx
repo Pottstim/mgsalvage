@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,27 +13,32 @@ interface UrgentFormProps {
 
 export default function UrgentForm({ source = "contact-urgent" }: UrgentFormProps) {
   const [submitted, setSubmitted] = useState(false);
-  const mutation = trpc.leads.submitUrgent.useMutation({
-    onSuccess: () => {
-      setSubmitted(true);
-      toast.success("Urgent request submitted! We'll call you back ASAP.");
-    },
-    onError: (err) => {
-      toast.error(err.message || "Something went wrong. Please try again.");
-    },
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     const fd = new FormData(e.currentTarget);
-    mutation.mutate({
+    const data = {
       name: fd.get("name") as string,
       phone: fd.get("phone") as string,
       city: (fd.get("city") as string) || "",
       vehicleAccessibility: (fd.get("vehicleAccessibility") as string) || "",
       needPickupToday: (fd.get("needPickupToday") as string) || "yes",
       source,
-    });
+      leadType: "urgent",
+      submittedAt: new Date().toISOString(),
+    };
+    
+    console.log("Urgent lead submitted:", data);
+    
+    // TODO: Wire to Google Sheets + Email
+    setTimeout(() => {
+      setSubmitted(true);
+      toast.success("Urgent request submitted! We'll call you back ASAP.");
+      setIsSubmitting(false);
+    }, 500);
   };
 
   if (submitted) {
@@ -104,8 +108,8 @@ export default function UrgentForm({ source = "contact-urgent" }: UrgentFormProp
         />
       </div>
 
-      <Button type="submit" className="w-full mt-6" size="lg" disabled={mutation.isPending}>
-        {mutation.isPending ? (
+      <Button type="submit" className="w-full mt-6" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin mr-2" />
             Submitting...

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,20 +14,14 @@ interface B2BFormProps {
 
 export default function B2BForm({ source = "website", defaultBusinessType }: B2BFormProps) {
   const [submitted, setSubmitted] = useState(false);
-  const mutation = trpc.leads.submitB2B.useMutation({
-    onSuccess: () => {
-      setSubmitted(true);
-      toast.success("Business inquiry submitted! We'll be in touch shortly.");
-    },
-    onError: (err) => {
-      toast.error(err.message || "Something went wrong. Please try again.");
-    },
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     const fd = new FormData(e.currentTarget);
-    mutation.mutate({
+    const data = {
       businessName: fd.get("businessName") as string,
       contactName: fd.get("contactName") as string,
       phone: fd.get("phone") as string,
@@ -40,7 +33,18 @@ export default function B2BForm({ source = "website", defaultBusinessType }: B2B
       pickupTiming: (fd.get("pickupTiming") as string) || "",
       notes: (fd.get("notes") as string) || "",
       source,
-    });
+      leadType: "b2b",
+      submittedAt: new Date().toISOString(),
+    };
+    
+    console.log("B2B Lead submitted:", data);
+    
+    // TODO: Wire to Google Sheets + Email
+    setTimeout(() => {
+      setSubmitted(true);
+      toast.success("Business inquiry submitted! We'll be in touch shortly.");
+      setIsSubmitting(false);
+    }, 500);
   };
 
   if (submitted) {
@@ -150,8 +154,8 @@ export default function B2BForm({ source = "website", defaultBusinessType }: B2B
         <Textarea id="notes" name="notes" placeholder="Any other details about your needs?" rows={3} />
       </div>
 
-      <Button type="submit" className="w-full mt-6" size="lg" disabled={mutation.isPending}>
-        {mutation.isPending ? (
+      <Button type="submit" className="w-full mt-6" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin mr-2" />
             Submitting...
