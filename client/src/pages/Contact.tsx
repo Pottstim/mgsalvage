@@ -18,6 +18,7 @@ export default function Contact() {
         title="Contact Us"
         description="Get in touch with MG Salvage for junk car removal, estimates, and business inquiries. Call, email, or fill out our form."
         canonical="/contact"
+        keywords="contact MG Salvage, junk car removal, get estimate, call us"
         schemas={schemas}
       />
       <PageHeader
@@ -81,6 +82,30 @@ export default function Contact() {
                     <p className="text-xs text-muted-foreground">Business hours</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Google Map Embed */}
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  Our Location
+                </h3>
+                <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.974017789901!2d-79.19266562394553!3d35.4830126249238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8851a5d5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sSanford%2C%20NC%2027330!5e0!3m2!1sen!2sus!4v1715700000000!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="MG Salvage location in Sanford, NC"
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  <MapPin className="w-3 h-3 inline mr-1" />
+                  {COMPANY.fullAddress} — Serving central North Carolina
+                </p>
               </div>
 
               {/* Urgent Form */}

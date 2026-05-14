@@ -1,14 +1,18 @@
 import { Link } from "wouter";
 import PageHeader from "@/components/PageHeader";
 import { COMPANY } from "@/lib/siteData";
-import SEOHead, { serviceSchema, breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { serviceSchema, breadcrumbSchema, faqSchema } from "@/components/SEOHead";
 import { useMemo } from "react";
 import { CheckCircle, ArrowRight, Phone, AlertTriangle, Truck, FileText, DollarSign } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { FAQS } from "@/lib/siteData";
 
 export default function JunkCarRemoval() {
+  const pageFaqs = FAQS.slice(0, 4);
   const schemas = useMemo(() => [
     serviceSchema("Junk Car Removal", "Free junk car removal across central North Carolina. We handle towing, paperwork, and pay you cash."),
     breadcrumbSchema([{ name: "Junk Car Removal", url: "/junk-car-removal" }]),
+    faqSchema(pageFaqs),
   ], []);
 
   return (
@@ -32,7 +36,14 @@ export default function JunkCarRemoval() {
               What Is Junk Car Removal?
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Junk car removal is the process of having an unwanted, damaged, or non-running vehicle picked up and taken off your property. At MG Salvage, we make this process free and simple — we come to you, handle all the paperwork, tow the vehicle at no cost, and pay you cash on the spot.
+              Junk car removal is the process of having an unwanted, damaged, or non-running vehicle picked up and taken off your property. At MG Salvage, we make this process free and simple — we come to you, handle all the paperwork, tow the vehicle at no cost, and pay you cash on the spot. If you've been wondering how to clear out space in your driveway, garage, or lot, our professional junk car removal service is the easiest answer. We specialize in assessing the salvage value of your vehicle quickly and ensuring that every step of the removal process is safe, environmentally responsible, and legally compliant. 
+            </p>
+            
+            <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+              Pricing & Value: What Is Your Junk Car Worth?
+            </h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Every vehicle has value, even if it no longer runs. Depending on the make, model, year, and condition, we offer highly competitive payouts for junk cars. While prices fluctuate based on current scrap metal rates and usable parts, payouts typically range from <strong>$200 to $1,500+</strong>. For highly sought-after models or vehicles with perfectly intact major components, we regularly pay even more. Get a free, no-obligation estimate today to find out exactly what your junk car is worth. 
             </p>
 
             <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
@@ -120,6 +131,27 @@ export default function JunkCarRemoval() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-muted/50 py-12 md:py-16">
+        <div className="container max-w-3xl">
+          <h2 className="text-2xl font-bold text-foreground mb-6 text-center" style={{ fontFamily: "var(--font-heading)" }}>
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="space-y-2">
+            {pageFaqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="bg-white rounded-lg border border-border px-4">
+                <AccordionTrigger className="text-sm font-medium text-foreground hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </>

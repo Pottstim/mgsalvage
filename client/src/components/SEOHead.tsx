@@ -7,12 +7,14 @@ interface SEOHeadProps {
   canonical?: string;
   keywords?: string;
   schemas?: Record<string, unknown>[];
+  noIndex?: boolean;
 }
 
-export default function SEOHead({ title, description, canonical, keywords, schemas }: SEOHeadProps) {
+export default function SEOHead({ title, description, canonical, keywords, schemas, noIndex = false }: SEOHeadProps) {
   useEffect(() => {
-    document.title = `${title} | MG Salvage`;
-    
+    const fullTitle = `${title} | MG Salvage`;
+    document.title = fullTitle;
+
     // Meta description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
@@ -21,6 +23,15 @@ export default function SEOHead({ title, description, canonical, keywords, schem
       document.head.appendChild(metaDesc);
     }
     metaDesc.setAttribute("content", description);
+
+    // Meta robots
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (!metaRobots) {
+      metaRobots = document.createElement("meta");
+      metaRobots.setAttribute("name", "robots");
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.setAttribute("content", noIndex ? "noindex, nofollow" : "index, follow");
 
     // Meta keywords
     if (keywords) {
@@ -35,7 +46,7 @@ export default function SEOHead({ title, description, canonical, keywords, schem
 
     // Open Graph tags
     const ogTags: Record<string, string> = {
-      "og:title": `${title} | MG Salvage`,
+      "og:title": fullTitle,
       "og:description": description,
       "og:type": "website",
       "og:site_name": "MG Salvage",
@@ -51,6 +62,23 @@ export default function SEOHead({ title, description, canonical, keywords, schem
       if (!meta) {
         meta = document.createElement("meta");
         meta.setAttribute("property", property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    });
+
+    // Twitter Card tags
+    const twitterTags: Record<string, string> = {
+      "twitter:card": "summary_large_image",
+      "twitter:title": fullTitle,
+      "twitter:description": description,
+      "twitter:image": "https://mgsalvage.com/manus-storage/og-image_144fea9d.png",
+    };
+    Object.entries(twitterTags).forEach(([name, content]) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", name);
         document.head.appendChild(meta);
       }
       meta.setAttribute("content", content);
@@ -85,7 +113,7 @@ export default function SEOHead({ title, description, canonical, keywords, schem
       const scripts = document.querySelectorAll('script[data-seo="true"]');
       scripts.forEach((s) => s.remove());
     };
-  }, [title, description, canonical, schemas]);
+  }, [title, description, canonical, keywords, schemas, noIndex]);
 
   return null;
 }
@@ -100,6 +128,13 @@ export function localBusinessSchema() {
     name: COMPANY.name,
     description: COMPANY.description,
     url: "https://mgsalvage.com",
+    sameAs: [
+      "https://www.google.com/maps?cid=YOUR_GBP_CID",
+      "https://www.yelp.com/biz/mg-salvage-sanford",
+      "https://www.bbb.org/us/nc/sanford/profile/auto-salvage/mg-salvage",
+      "https://www.angi.com/companylist/us/nc/sanford/mg-salvage.htm",
+      "https://nextdoor.com/pages/mg-salvage-sanford-nc/"
+    ],
     telephone: COMPANY.phone,
     email: COMPANY.email,
     address: {

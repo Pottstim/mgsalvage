@@ -46,7 +46,7 @@ function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -91,7 +91,7 @@ function Header() {
       {/* Mobile Nav */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-border bg-white">
-          <nav className="container py-4 flex flex-col gap-1">
+          <nav className="container py-4 flex flex-col gap-1" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -177,6 +177,8 @@ function Footer() {
                 { label: "How It Works", href: "/about" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Contact Us", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms of Service", href: "/terms" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-white transition-colors flex items-center gap-1">
@@ -213,15 +215,11 @@ function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>Business Services</h4>
             <ul className="flex flex-col gap-2">
-              {[
-                { label: "Mechanic Shops", href: "/business-vehicle-removal/mechanic-shops" },
-                { label: "Auto Body Shops", href: "/business-vehicle-removal/auto-body-shops" },
-                { label: "Used Car Dealers", href: "/business-vehicle-removal/used-car-dealers" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white transition-colors flex items-center gap-1">
+              {["Mechanic Shops", "Auto Body Shops", "Used Car Dealers"].map((label) => (
+                <li key={label}>
+                  <Link href={`/business-vehicle-removal/${label.toLowerCase().replace(/\s+/g, "-")}`} className="text-sm hover:text-white transition-colors flex items-center gap-1">
                     <ChevronRight className="w-3 h-3" />
-                    {link.label}
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -249,10 +247,68 @@ function Footer() {
   );
 }
 
+function Breadcrumbs() {
+  const [location] = useLocation();
+  if (location === "/") return null;
+
+  const crumbMap: Record<string, { label: string; href?: string }> = {
+    "/": { label: "Home", href: "/" },
+    "/sell-your-junk-car": { label: "Sell Your Junk Car", href: "/sell-your-junk-car" },
+    "/junk-car-removal": { label: "Junk Car Removal", href: "/junk-car-removal" },
+    "/business-vehicle-removal": { label: "Business Vehicle Removal", href: "/business-vehicle-removal" },
+    "/service-areas": { label: "Service Areas", href: "/service-areas" },
+    "/faq": { label: "FAQ", href: "/faq" },
+    "/about": { label: "About", href: "/about" },
+    "/reviews": { label: "Reviews", href: "/reviews" },
+    "/contact": { label: "Contact", href: "/contact" },
+    "/privacy": { label: "Privacy Policy", href: "/privacy" },
+    "/terms": { label: "Terms of Service", href: "/terms" },
+  };
+
+  // Handle dynamic routes like /service-areas/sanford, /business-vehicle-removal/mechanic-shops
+  const segments = location.split("/").filter(Boolean);
+  const parts: { label: string; href?: string }[] = [{ label: "Home", href: "/" }];
+
+  let accumulated = "";
+  for (const segment of segments) {
+    accumulated += `/${segment}`;
+    const match = crumbMap[accumulated];
+    if (match) {
+      parts.push(match);
+    } else {
+      // Capitalize segment for display
+      const label = segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+      parts.push({ label });
+    }
+  }
+
+  if (parts.length <= 1) return null;
+
+  return (
+    <nav className="bg-[oklch(0.08_0.01_250)] py-2.5" aria-label="Breadcrumb">
+      <div className="container flex items-center gap-1.5 text-sm">
+        {parts.map((part, i) => (
+          <span key={i} className="flex items-center gap-1.5 text-white/60">
+            {i > 0 && <ChevronRight className="w-3.5 h-3.5 shrink-0" />}
+            {part.href ? (
+              <Link href={part.href} className="hover:text-white transition-colors">
+                {part.label}
+              </Link>
+            ) : (
+              <span className="text-white/80">{part.label}</span>
+            )}
+          </span>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
+      <Breadcrumbs />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>

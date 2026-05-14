@@ -2,5 +2,16 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /404
+Disallow: /search
+
+# AI crawlers - allow explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://mgsalvage.com/sitemap.xml

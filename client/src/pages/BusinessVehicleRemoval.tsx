@@ -54,8 +54,16 @@ export default function BusinessVehicleRemoval() {
               Vehicle Removal Built for Business
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              MG Salvage partners with automotive businesses across central North Carolina to provide dependable vehicle removal. Whether you need a one-time lot clearing or ongoing scheduled pickups, we work around your operations to keep things running smoothly.
+              MG Salvage partners with automotive businesses across central North Carolina to provide dependable vehicle removal. Whether you need a one-time lot clearing or ongoing scheduled pickups, we work around your operations to keep things running smoothly. Our commercial services are designed specifically to resolve the logistical headaches of abandoned customer vehicles, insurance write-offs, and unsalable trade-ins. By outsourcing your vehicle removal needs to us, you can clear valuable bay and lot space, avoid the liability of storing neglected vehicles, and focus on your core business.
             </p>
+            
+            <h3 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+              B2B Pricing & Payouts
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              We understand that maximizing the value of your assets and minimizing hassle is critical to your bottom line. We provide upfront, fair market pricing for every vehicle we remove, paying <strong>$200 to $1,500+ per vehicle</strong> depending on weight, parts value, and condition. For bulk removals and long-term business partnerships, we often negotiate preferential terms or recurring pick-up schedules that streamline your operations and guarantee a steady revenue stream from your junk or abandoned inventory.
+            </p>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 "Lot clearing & abandoned vehicles",

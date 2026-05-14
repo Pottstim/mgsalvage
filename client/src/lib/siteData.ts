@@ -1,7 +1,7 @@
 export const COMPANY = {
   name: "MG Salvage",
-  phone: "(919) 555-0123",
-  phoneRaw: "9195550123",
+  phone: "(910) 555-0123",
+  phoneRaw: "9105550123",
   email: "info@mgsalvage.com",
   address: "Sanford, NC",
   fullAddress: "Sanford, NC 27330",

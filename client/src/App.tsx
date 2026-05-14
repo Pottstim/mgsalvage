@@ -16,6 +16,8 @@ import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 function Router() {
   return (
@@ -36,6 +38,8 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/reviews" component={Reviews} />
         <Route path="/contact" component={Contact} />
+        <Route path="/privacy" component={PrivacyPolicy} />
+        <Route path="/terms" component={TermsOfService} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

@@ -1,0 +1,23 @@
+# Security Headers for mgsalvage.com
+# Add these headers via Cloudflare _headers or server configuration
+
+# Prevent clickjacking
+X-Frame-Options: "SAMEORIGIN"
+
+# Content Security Policy - Baseline for inline scripts/styles needed by Vite/React
+Content-Security-Policy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google.com https://*.googletagmanager.com; frame-ancestors 'self'; form-action 'self'; base-uri 'self'"
+
+# Prevent MIME type sniffing
+X-Content-Type-Options: "nosniff"
+
+# Referrer Policy
+Referrer-Policy: "strict-origin-when-cross-origin"
+
+# Strict Transport Security (HTTPS only for 1 year, include subdomains)
+Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+
+# Permissions Policy - restrict browser features
+Permissions-Policy: "geolocation=(), microphone=(), camera=()"
+
+# XSS Protection (legacy browsers)
+X-XSS-Protection: "1; mode=block"
