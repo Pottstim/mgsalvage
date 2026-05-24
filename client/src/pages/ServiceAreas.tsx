@@ -27,12 +27,28 @@ export default function ServiceAreas() {
 
       <section className="py-12 md:py-16">
         <div className="container">
-          <div className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+          <div className="max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-4 text-center" style={{ fontFamily: "var(--font-heading)" }}>
               Coverage Area
             </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              MG Salvage serves a 50-mile radius from our headquarters in Sanford, NC, covering five counties in central North Carolina. We provide free towing, fair cash offers, and same-day pickup throughout Lee, Cumberland, Chatham, Moore, and Harnett counties. If you're not sure whether we serve your area, give us a call — we're happy to check.
+            </p>
+            <div className="bg-muted/50 rounded-xl p-6 mb-6">
+              <h3 className="text-lg font-semibold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                Counties We Serve
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {["Lee County (Sanford)", "Cumberland County (Fayetteville)", "Chatham County (Pittsboro)", "Moore County (Carthage)", "Harnett County (Lillington)"].map((county) => (
+                  <div key={county} className="flex items-center gap-2 text-sm text-foreground">
+                    <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                    {county}
+                  </div>
+                ))}
+              </div>
+            </div>
             <p className="text-muted-foreground leading-relaxed">
-              We cover Sanford and the surrounding communities within a 50-mile radius, including major towns in Lee, Cumberland, Chatham, Moore, and Harnett counties. If you're not sure whether we serve your area, give us a call — we're happy to check.
+              Our service area extends from the west of Raleigh to the Sandhills region, covering both urban and rural communities. Whether you have a single vehicle on a suburban property or multiple vehicles at a commercial lot, we have the equipment and experience to handle it.
             </p>
           </div>
 

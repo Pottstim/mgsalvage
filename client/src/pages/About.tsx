@@ -1,13 +1,14 @@
 import { Link } from "wouter";
 import PageHeader from "@/components/PageHeader";
 import { COMPANY, HOW_IT_WORKS } from "@/lib/siteData";
-import SEOHead, { localBusinessSchema, breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { localBusinessSchema, breadcrumbSchema, aggregateRatingSchema } from "@/components/SEOHead";
 import { useMemo } from "react";
 import { ArrowRight, Phone, MapPin, Clock, Shield, Users } from "lucide-react";
 
 export default function About() {
   const schemas = useMemo(() => [
     localBusinessSchema(),
+    aggregateRatingSchema(),
     breadcrumbSchema([{ name: "About", url: "/about" }]),
   ], []);
 

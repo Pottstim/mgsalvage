@@ -53,14 +53,37 @@ async function main() {
           waitUntil: "networkidle0",
         });
 
-        // Wait for SEOHead to update the document title and meta tags
-        await page.waitForFunction(() => {
-          const title = document.title;
-          return title && title !== "MG Salvage - Junk Car Removal & Cash for Cars in Sanford, NC";
-        }, { timeout: 5000 }).catch(() => {});
+        // Wait for React to hydrate and SEOHead to update the document
+        // Poll for up to 10 seconds for the title to change from the default
+        const defaultTitle = "MG Salvage - Junk Car Removal & Cash for Cars in Sanford, NC";
+        let titleChanged = false;
+        for (let i = 0; i < 50; i++) {
+          await new Promise(r => setTimeout(r, 200));
+          const currentTitle = await page.title();
+          if (currentTitle && currentTitle !== defaultTitle && currentTitle.includes("| MG Salvage")) {
+            titleChanged = true;
+            break;
+          }
+        }
+        if (!titleChanged) {
+          console.warn(`  WARNING: Title did not change from default for ${route}`);
+        }
 
-        // Wait a small tick for DOM mutations to settle
-        await page.waitForTimeout(200);
+        // Wait for schema scripts to be injected by SEOHead's useEffect
+        console.log("  Waiting for schema scripts...");
+        const schemaFound = await page.waitForFunction(() => {
+          const scripts = document.querySelectorAll('script[data-seo="true"]');
+          return scripts.length > 0;
+        }, { timeout: 8000 }).then(() => true).catch(() => false);
+
+        if (!schemaFound) {
+          console.warn(`  WARNING: Schema scripts NOT found for ${route}`);
+        } else {
+          console.log(`  Schema scripts found!`);
+        }
+
+        // Final wait for stability
+        await new Promise(r => setTimeout(r, 500));
 
         const html = await page.content();
 

@@ -62,8 +62,8 @@ export const FAQS = [
     answer: "We buy all types of vehicles regardless of condition — junk cars, damaged vehicles, non-running cars, trucks, SUVs, vans, and even commercial vehicles. Whether your car runs, doesn't start, or has been in an accident, we'll make you an offer.",
   },
   {
-    question: "Do I need a title to sell my junk car?",
-    answer: "While having a clean title makes the process faster, we can still purchase vehicles with salvage titles or even no title in many cases. Contact us with your vehicle details and we'll walk you through the options available in your situation.",
+    question: "Do I need a title to sell my junk car in North Carolina?",
+    answer: "In North Carolina, having a title is the most straightforward way to sell your vehicle. However, if you've lost your title, we can often still purchase the car if you have a valid photo ID and proof of registration. Contact us with your specific details, and we'll help you navigate the process.",
   },
   {
     question: "How quickly can you pick up my vehicle?",
@@ -86,8 +86,16 @@ export const FAQS = [
     answer: "Absolutely. We work with mechanic shops, auto body centers, used car dealers, and fleet operators to remove unwanted vehicles from their lots. We offer scheduled pickups and can handle multiple vehicles at once.",
   },
   {
+    question: "What happens to the car after you buy it?",
+    answer: "Depending on the condition, the vehicle is either salvaged for parts, recycled for scrap metal, or repaired if it's still viable. We follow all environmental regulations for the proper disposal of fluids and hazardous materials.",
+  },
+  {
+    question: "Do you buy cars that have been in accidents?",
+    answer: "Yes, we buy wrecked and accident-damaged vehicles. Even if the car is a total loss, it still has value in parts and scrap metal. We'll provide a fair offer based on its current condition.",
+  },
+  {
     question: "What areas do you serve?",
-    answer: "We serve a 50-mile radius from our headquarters in Sanford, NC, including Fayetteville, Pittsboro, Carthage, Lillington, and surrounding communities throughout central North Carolina.",
+    answer: "We serve a 50-mile radius from our headquarters in Sanford, NC, including Fayetteville, Pittsboro, Carthage, Lillington, Apex, Holly Springs, and surrounding communities throughout central North Carolina.",
   },
 ];
 
