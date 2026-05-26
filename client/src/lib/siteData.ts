@@ -1,7 +1,7 @@
 export const COMPANY = {
   name: "MG Salvage",
-  phone: "(910) 555-0123",
-  phoneRaw: "9105550123",
+  phone: "(919) 555-0123",
+  phoneRaw: "9195550123",
   email: "info@mgsalvage.com",
   address: "Sanford, NC",
   fullAddress: "Sanford, NC 27330",
@@ -11,6 +11,7 @@ export const COMPANY = {
   founded: "2020",
   vehiclesPurchased: "2,500+",
   serviceRadius: "50-mile",
+  googleBusinessUrl: "https://g.page/r/mgsalvage/review",
 };
 
 export const SERVICE_AREAS = [
@@ -97,6 +98,26 @@ export const FAQS = [
     question: "What areas do you serve?",
     answer: "We serve a 50-mile radius from our headquarters in Sanford, NC, including Fayetteville, Pittsboro, Carthage, Lillington, Apex, Holly Springs, and surrounding communities throughout central North Carolina.",
   },
+  {
+    question: "How is the scrap value of my car determined?",
+    answer: "Scrap value is based on the current scrap metal market rate, the vehicle's weight, and any salvageable parts. Heavier vehicles like trucks and SUVs generally yield higher offers. We give you a fair offer based on real-time market data — no guesswork.",
+  },
+  {
+    question: "Can you pick up a car that doesn't have wheels or is missing parts?",
+    answer: "Absolutely. We buy vehicles in any condition, including those missing tires, wheels, engines, or other major components. As long as the vehicle has a VIN and you can provide proof of ownership, we can make you an offer.",
+  },
+  {
+    question: "What if my car is on private property or hard to access?",
+    answer: "Not a problem. Our tow operators are experienced with tricky pickups — backyards, tight driveways, garages, and off-road situations. Just let us know what we're working with when you request your estimate.",
+  },
+  {
+    question: "Do you offer same-day payment?",
+    answer: "Yes. When our driver arrives to pick up your vehicle, you'll be paid cash on the spot. There's no waiting for a check in the mail or bank transfer delays.",
+  },
+  {
+    question: "Is MG Salvage licensed and insured?",
+    answer: "Yes, MG Salvage is a fully licensed and insured vehicle acquisition company operating in compliance with North Carolina DMV regulations. We handle all title transfers and legal documentation properly.",
+  },
 ];
 
 export const TESTIMONIALS = [
@@ -104,36 +125,42 @@ export const TESTIMONIALS = [
     name: "Marcus T.",
     location: "Sanford, NC",
     type: "Consumer",
+    rating: 5,
     quote: "Called MG Salvage about my old Honda that hadn't run in two years. They gave me a fair price over the phone, showed up the next morning, and paid me cash on the spot. Couldn't have been easier.",
   },
   {
     name: "Sarah K.",
     location: "Fayetteville, NC",
     type: "Consumer",
+    rating: 5,
     quote: "I was worried about not having the title, but MG Salvage walked me through the whole process. They were professional, on time, and the towing was completely free. Highly recommend.",
   },
   {
     name: "Dave's Auto Repair",
     location: "Pittsboro, NC",
     type: "Mechanic Shop",
+    rating: 5,
     quote: "We use MG Salvage to clear abandoned vehicles from our lot. They're reliable, show up when they say they will, and the process is straightforward. Great partner for our shop.",
   },
   {
     name: "Carolina Collision Center",
     location: "Carthage, NC",
     type: "Body Shop",
+    rating: 5,
     quote: "MG Salvage handles all our totaled vehicle removals. Their team is professional and they make the paperwork painless. We've been working with them for over a year now.",
   },
   {
     name: "James R.",
     location: "Lillington, NC",
     type: "Consumer",
+    rating: 5,
     quote: "Needed same-day pickup for a wrecked truck in my driveway. MG Salvage came through — they were there within hours and paid me a fair price. Real professionals.",
   },
   {
     name: "Tri-County Motors",
     location: "Sanford, NC",
     type: "Dealer",
+    rating: 5,
     quote: "As a used car dealer, we regularly need vehicles cleared from our lot. MG Salvage offers consistent service and fair pricing. They understand the business side of things.",
   },
 ];
