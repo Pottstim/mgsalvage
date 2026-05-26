@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Pages
+name: Build, Prerender & Deploy to Cloudflare Pages
 
 on:
   push:
@@ -32,8 +32,11 @@ jobs:
       - name: Install Puppeteer browsers
         run: npx puppeteer browsers install chrome
 
-      - name: Build and Prerender
+      - name: Build Vite app
         run: pnpm build
+
+      - name: Prerender routes with Puppeteer
+        run: node prerender.js
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
