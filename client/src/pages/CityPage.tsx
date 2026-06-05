@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useParams } from "wouter";
 import PageHeader from "@/components/PageHeader";
 import ConsumerForm from "@/components/ConsumerForm";
 import { SERVICE_AREAS, COMPANY, FAQS, TESTIMONIALS } from "@/lib/siteData";
@@ -87,7 +87,8 @@ const CITY_LOCAL_CONTENT: Record<string, {
   },
 };
 
-export default function CityPage({ params }: { params?: { slug?: string } }) {
+export default function CityPage() {
+  const params = useParams<{ slug: string }>();
   const city = params?.slug ?? "";
   const area = SERVICE_AREAS.find((a) => a.slug === city);
   const localContent = CITY_LOCAL_CONTENT[city];
@@ -103,7 +104,23 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
     ]),
   ] : [], [area]);
 
-  if (!area || !localContent) {
+  // For cities without custom local content, generate generic content from SERVICE_AREAS data
+  const effectiveLocalContent = localContent ?? (area ? {
+    zipCodes: [],
+    neighborhoods: [`${area.name} area`, `${area.county} communities`],
+    landmarks: [`${area.name} downtown`, `${area.county} area`],
+    localContext: `MG Salvage provides professional junk car removal throughout ${area.name} and ${area.county}. We buy vehicles in any condition — running or not — and offer free towing with cash paid on the spot. Our team serves the entire ${area.name} area with same-day and next-day pickup options.`,
+    whyChooseUs: [
+      `Full ${area.county} coverage`,
+      "Free towing included with every pickup",
+      "Cash paid on the spot",
+      "All makes, models, and conditions accepted",
+      "Licensed and insured service",
+    ],
+    serviceNote: `We serve all of ${area.name} and the surrounding ${area.county} area. Call us for a free estimate and same-day scheduling.`,
+  } : null);
+
+  if (!area || !effectiveLocalContent) {
     return (
       <div className="container py-20 text-center">
         <h1 className="text-2xl font-bold text-foreground mb-4">Area Not Found</h1>
@@ -145,7 +162,7 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
                 Junk Car Removal in {area.name}
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                {localContent.localContext}
+                {effectiveLocalContent.localContext}
               </p>
 
               {/* Why Choose Us — local */}
@@ -153,7 +170,7 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
                 Why {area.name} Residents Choose MG Salvage
               </h3>
               <ul className="flex flex-col gap-2.5 mb-8">
-                {localContent.whyChooseUs.map((item) => (
+                {effectiveLocalContent.whyChooseUs.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-foreground">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     {item}
@@ -163,7 +180,7 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
 
               {/* Service note */}
               <div className="bg-muted/50 rounded-xl p-5 mb-8">
-                <p className="text-sm text-foreground leading-relaxed">{localContent.serviceNote}</p>
+                <p className="text-sm text-foreground leading-relaxed">{effectiveLocalContent.serviceNote}</p>
               </div>
 
               {/* ZIP codes served */}
@@ -172,7 +189,7 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
                   ZIP Codes We Serve in {area.name}
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {localContent.zipCodes.map((zip) => (
+                  {effectiveLocalContent.zipCodes.map((zip) => (
                     <span key={zip} className="bg-muted border border-border rounded-lg px-3 py-1.5 text-sm font-medium text-foreground">
                       {zip}
                     </span>
@@ -186,7 +203,7 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
                   {area.name} Neighborhoods & Areas We Serve
                 </h3>
                 <div className="grid grid-cols-1 gap-2">
-                  {localContent.neighborhoods.map((n) => (
+                  {effectiveLocalContent.neighborhoods.map((n) => (
                     <div key={n} className="flex items-center gap-2 text-sm text-muted-foreground">
                       <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
                       {n}
@@ -201,7 +218,7 @@ export default function CityPage({ params }: { params?: { slug?: string } }) {
                   Serving Near {area.name} Landmarks
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {localContent.landmarks.map((l) => (
+                  {effectiveLocalContent.landmarks.map((l) => (
                     <span key={l} className="bg-primary/5 border border-primary/20 rounded-lg px-3 py-1.5 text-xs font-medium text-primary">
                       {l}
                     </span>

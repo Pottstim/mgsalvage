@@ -1,3 +1,4 @@
+import { useParams } from "wouter";
 import PageHeader from "@/components/PageHeader";
 import B2BForm from "@/components/B2BForm";
 import { COMPANY, TESTIMONIALS } from "@/lib/siteData";
@@ -85,7 +86,8 @@ const VERTICALS: Record<string, VerticalData> = {
   },
 };
 
-export default function B2BVertical({ params }: { params?: { slug?: string } }) {
+export default function B2BVertical() {
+  const params = useParams<{ slug: string }>();
   const slug = params?.slug ?? "";
   const data = VERTICALS[slug];
   const schemas = useMemo(() => data ? [
