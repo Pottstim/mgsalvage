@@ -50,8 +50,7 @@ export default function SEOHead({ title, description, canonical, keywords, schem
       "og:description": description,
       "og:type": "website",
       "og:site_name": "MG Salvage",
-      // TODO: Replace with a real 1200x630px PNG at /assets/og-image.png
-      "og:image": "https://mgsalvage.com/assets/og-image.svg",
+      "og:image": "https://mgsalvage.com/assets/og-image.jpg",
       "og:image:width": "1200",
       "og:image:height": "630",
     };
@@ -73,7 +72,7 @@ export default function SEOHead({ title, description, canonical, keywords, schem
       "twitter:card": "summary_large_image",
       "twitter:title": fullTitle,
       "twitter:description": description,
-      "twitter:image": "https://mgsalvage.com/assets/og-image.svg",
+      "twitter:image": "https://mgsalvage.com/assets/og-image.jpg",
     };
     Object.entries(twitterTags).forEach(([name, content]) => {
       let meta = document.querySelector(`meta[name="${name}"]`);

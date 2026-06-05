@@ -39,7 +39,7 @@ function Header() {
       <div className="container flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-2">
           <img
-            src="/assets/logo-light.svg"
+            src="/assets/logo-light.png"
             alt="MG Salvage"
             className="h-12 w-auto"
           />
@@ -138,7 +138,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/assets/logo-dark.svg"
+                src="/assets/logo-dark.png"
                 alt="MG Salvage"
                 className="h-11 w-auto"
               />
