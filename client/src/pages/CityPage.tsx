@@ -87,7 +87,8 @@ const CITY_LOCAL_CONTENT: Record<string, {
   },
 };
 
-export default function CityPage({ city }: { city: string }) {
+export default function CityPage({ params }: { params?: { slug?: string } }) {
+  const city = params?.slug ?? "";
   const area = SERVICE_AREAS.find((a) => a.slug === city);
   const localContent = CITY_LOCAL_CONTENT[city];
 

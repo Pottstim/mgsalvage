@@ -18,7 +18,7 @@ export default function TermsOfService() {
           "@type": "WebPage",
           name: "Terms of Service",
           description: "Terms and conditions for MG Salvage junk car removal services",
-          url: "https://mgsalvage.com/terms",
+          url: "https://mgsalvage.com/terms-of-service",
           publisher: {
             "@type": "Organization",
             name: "MG Salvage",
@@ -29,7 +29,7 @@ export default function TermsOfService() {
       <PageHeader
         title="Terms of Service"
         subtitle="Terms and conditions for MG Salvage junk car removal and vehicle acquisition services."
-        breadcrumbs={[{ label: "Terms of Service", url: "/terms" }]}
+        breadcrumbs={[{ label: "Terms of Service", href: "/terms-of-service" }]}
       />
 
       <section className="py-12 md:py-16">

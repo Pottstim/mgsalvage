@@ -1,11 +1,16 @@
+/**
+ * UrgentForm.tsx — Same-day pickup request form
+ * Wired to submitLead() → VITE_LEADS_ENDPOINT or Formspree fallback.
+ */
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Loader2, Zap } from "lucide-react";
+import { CheckCircle, Loader2, Zap, Phone } from "lucide-react";
 import { toast } from "sonner";
+import { submitLead } from "@/lib/submitLead";
+import { COMPANY } from "@/lib/siteData";
 
 interface UrgentFormProps {
   source?: string;
@@ -18,42 +23,48 @@ export default function UrgentForm({ source = "contact-urgent" }: UrgentFormProp
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     const fd = new FormData(e.currentTarget);
-    const data = {
-      name: fd.get("name") as string,
-      phone: fd.get("phone") as string,
-      city: (fd.get("city") as string) || "",
-      vehicleAccessibility: (fd.get("vehicleAccessibility") as string) || "",
-      needPickupToday: (fd.get("needPickupToday") as string) || "yes",
-      source,
-      leadType: "urgent",
-      submittedAt: new Date().toISOString(),
-    };
-    
-    console.log("Urgent lead submitted:", data);
-    
-    // TODO: Wire to Google Sheets + Email
-    setTimeout(() => {
+
+    try {
+      await submitLead({
+        name: fd.get("name") as string,
+        phone: fd.get("phone") as string,
+        city: (fd.get("city") as string) || undefined,
+        vehicleAccessibility: (fd.get("vehicleAccessibility") as string) || undefined,
+        needPickupToday: (fd.get("needPickupToday") as string) || "yes",
+        source,
+        leadType: "urgent",
+        submittedAt: new Date().toISOString(),
+      });
       setSubmitted(true);
-      toast.success("Urgent request submitted! We'll call you back ASAP.");
+      toast.success("Urgent request sent! We'll call you back ASAP.");
+    } catch (err) {
+      console.error("Urgent lead submission error:", err);
+      toast.error("Something went wrong. Please call us directly.");
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   if (submitted) {
     return (
-      <div className="bg-white rounded-xl border border-border p-8 text-center">
-        <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+      <div className="bg-white rounded-xl border-2 border-primary/30 p-8 text-center">
+        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-primary" />
+        </div>
         <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
           We're On It!
         </h3>
-        <p className="text-muted-foreground mb-4">
-          Your urgent request has been received. Expect a callback within the hour during business hours.
+        <p className="text-muted-foreground mb-2">
+          Your urgent request has been received. Expect a callback <strong>within the hour</strong> during business hours.
         </p>
-        <Button variant="outline" onClick={() => setSubmitted(false)}>
-          Submit Another Request
-        </Button>
+        <p className="text-sm text-muted-foreground mb-6">
+          Can't wait? Call us directly:{" "}
+          <a href={`tel:${COMPANY.phoneRaw}`} className="text-primary font-semibold hover:underline">
+            {COMPANY.phone}
+          </a>
+        </p>
+        <Button variant="outline" onClick={() => setSubmitted(false)}>Submit Another Request</Button>
       </div>
     );
   }
@@ -80,47 +91,38 @@ export default function UrgentForm({ source = "contact-urgent" }: UrgentFormProp
           <Input id="urgentPhone" name="phone" type="tel" placeholder="(919) 555-0123" required />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="urgentCity">City / Location</Label>
-          <Input id="urgentCity" name="city" placeholder="Sanford, NC" />
+          <Label htmlFor="urgentCity">City</Label>
+          <Input id="urgentCity" name="city" placeholder="Sanford" />
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="needPickupToday">Need Pickup Today?</Label>
-          <Select name="needPickupToday" defaultValue="yes">
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
+          <Label htmlFor="vehicleAccessibility">Vehicle Accessibility</Label>
+          <Select name="vehicleAccessibility">
+            <SelectTrigger><SelectValue placeholder="Where is the vehicle?" /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="yes">Yes, today</SelectItem>
-              <SelectItem value="tomorrow">Tomorrow</SelectItem>
-              <SelectItem value="this-week">This week</SelectItem>
+              <SelectItem value="driveway">Driveway / Street</SelectItem>
+              <SelectItem value="backyard">Backyard</SelectItem>
+              <SelectItem value="garage">Garage</SelectItem>
+              <SelectItem value="other">Other (describe in notes)</SelectItem>
             </SelectContent>
           </Select>
         </div>
       </div>
 
-      <div className="mt-4 space-y-1.5">
-        <Label htmlFor="vehicleAccessibility">Vehicle Accessibility</Label>
-        <Textarea
-          id="vehicleAccessibility"
-          name="vehicleAccessibility"
-          placeholder="Where is the vehicle? (e.g., In driveway, keys available, on street, etc.)"
-          rows={2}
-        />
-      </div>
-
       <Button type="submit" className="w-full mt-6" size="lg" disabled={isSubmitting}>
         {isSubmitting ? (
-          <>
-            <Loader2 className="w-4 h-4 animate-spin mr-2" />
-            Submitting...
-          </>
+          <><Loader2 className="w-4 h-4 animate-spin mr-2" />Sending...</>
         ) : (
-          <>
-            <Zap className="w-4 h-4 mr-1" />
-            Request Urgent Callback
-          </>
+          <><Zap className="w-4 h-4 mr-2" />Request Same-Day Pickup</>
         )}
       </Button>
+
+      <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+        <Phone className="w-3.5 h-3.5" />
+        <span>Or call directly:</span>
+        <a href={`tel:${COMPANY.phoneRaw}`} className="text-primary font-semibold hover:underline">
+          {COMPANY.phone}
+        </a>
+      </div>
     </form>
   );
 }

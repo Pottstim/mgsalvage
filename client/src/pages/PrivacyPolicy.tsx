@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           "@type": "WebPage",
           name: "Privacy Policy",
           description: "MG Salvage's privacy policy for junk car removal services in Sanford, NC",
-          url: "https://mgsalvage.com/privacy",
+          url: "https://mgsalvage.com/privacy-policy",
           publisher: {
             "@type": "Organization",
             name: "MG Salvage",
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
       <PageHeader
         title="Privacy Policy"
         subtitle="How MG Salvage collects, uses, and protects your personal information."
-        breadcrumbs={[{ label: "Privacy Policy", url: "/privacy" }]}
+        breadcrumbs={[{ label: "Privacy Policy", href: "/privacy-policy" }]}
       />
 
       <section className="py-12 md:py-16">

@@ -28,7 +28,7 @@ function Router() {
         <Route path="/sell-your-junk-car" component={SellYourJunkCar} />
         <Route path="/junk-car-removal" component={JunkCarRemoval} />
         <Route path="/business-vehicle-removal" component={BusinessVehicleRemoval} />
-        <Route path="/b2b" component={B2BVertical} />
+        <Route path="/business-vehicle-removal/:slug" component={B2BVertical} />
         <Route path="/business-account" component={BusinessAccount} />
         <Route path="/service-areas" component={ServiceAreas} />
         <Route path="/service-areas/:slug" component={CityPage} />

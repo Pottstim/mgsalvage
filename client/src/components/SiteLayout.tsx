@@ -177,8 +177,8 @@ function Footer() {
                 { label: "How It Works", href: "/about" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Contact Us", href: "/contact" },
-                { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms of Service", href: "/terms" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Service", href: "/terms-of-service" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-white transition-colors flex items-center gap-1">
@@ -240,7 +240,20 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
           <p>&copy; {new Date().getFullYear()} MG Salvage. All rights reserved.</p>
-          <p>Serving Sanford, NC and surrounding areas within a 50-mile radius.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+              Licensed &amp; Insured
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+              NC DMV Compliant
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+              50-Mile Service Radius
+            </span>
+          </div>
         </div>
       </div>
     </footer>
@@ -261,8 +274,8 @@ function Breadcrumbs() {
     "/about": { label: "About", href: "/about" },
     "/reviews": { label: "Reviews", href: "/reviews" },
     "/contact": { label: "Contact", href: "/contact" },
-    "/privacy": { label: "Privacy Policy", href: "/privacy" },
-    "/terms": { label: "Terms of Service", href: "/terms" },
+    "/privacy-policy": { label: "Privacy Policy", href: "/privacy-policy" },
+    "/terms-of-service": { label: "Terms of Service", href: "/terms-of-service" },
   };
 
   // Handle dynamic routes like /service-areas/sanford, /business-vehicle-removal/mechanic-shops
@@ -304,13 +317,39 @@ function Breadcrumbs() {
   );
 }
 
+/**
+ * Sticky mobile CTA bar — shown only on mobile, fixed to bottom.
+ * Drives call and form conversions from every page.
+ */
+function MobileStickyBar() {
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border shadow-lg flex lg:hidden">
+      <a
+        href={`tel:${COMPANY.phoneRaw}`}
+        className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-primary border-r border-border"
+      >
+        <Phone className="w-4 h-4" />
+        Call Now
+      </a>
+      <Link
+        href="/sell-your-junk-car"
+        className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold bg-primary text-white"
+      >
+        Get Free Estimate
+      </Link>
+    </div>
+  );
+}
+
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <Breadcrumbs />
-      <main className="flex-1">{children}</main>
+      {/* pb-16 on mobile to prevent content hiding behind sticky bar */}
+      <main className="flex-1 pb-16 lg:pb-0">{children}</main>
       <Footer />
+      <MobileStickyBar />
     </div>
   );
 }

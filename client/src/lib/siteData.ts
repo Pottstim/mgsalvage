@@ -1,7 +1,12 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// COMPANY DATA — TODO: Replace all placeholder values with real business data
+// ─────────────────────────────────────────────────────────────────────────────
 export const COMPANY = {
   name: "MG Salvage",
+  // TODO: Replace with your real phone number (also update phoneRaw)
   phone: "(919) 555-0123",
   phoneRaw: "9195550123",
+  // TODO: Replace with your real business email
   email: "info@mgsalvage.com",
   address: "Sanford, NC",
   fullAddress: "Sanford, NC 27330",
@@ -11,6 +16,7 @@ export const COMPANY = {
   founded: "2020",
   vehiclesPurchased: "2,500+",
   serviceRadius: "50-mile",
+  // TODO: Replace with your actual Google Business Profile review link
   googleBusinessUrl: "https://g.page/r/mgsalvage/review",
 };
 
@@ -54,6 +60,62 @@ export const SERVICE_AREAS = [
     county: "Harnett County",
     description: "Need to sell a junk car in Lillington? MG Salvage covers all of Harnett County with free towing, fair cash offers, and professional service you can count on.",
     highlights: ["Harnett County coverage", "Fair market offers", "Professional and reliable"],
+  },
+  {
+    slug: "apex",
+    name: "Apex",
+    state: "NC",
+    county: "Wake County",
+    description: "MG Salvage provides fast junk car removal in Apex and the greater Wake County area. We buy cars in any condition — running or not — and pay cash on the spot with free towing.",
+    highlights: ["Wake County coverage", "Same-day pickup available", "Cash paid on pickup"],
+  },
+  {
+    slug: "holly-springs",
+    name: "Holly Springs",
+    state: "NC",
+    county: "Wake County",
+    description: "Selling a junk car in Holly Springs is easy with MG Salvage. We offer free towing, instant cash offers, and same-day or next-day pickup throughout the Holly Springs area.",
+    highlights: ["Fast response times", "No hidden fees", "All vehicle types accepted"],
+  },
+  {
+    slug: "dunn",
+    name: "Dunn",
+    state: "NC",
+    county: "Harnett County",
+    description: "MG Salvage serves Dunn and the surrounding Harnett County area with reliable junk car removal. We buy wrecked, non-running, and unwanted vehicles and pay cash on the spot.",
+    highlights: ["Harnett County service", "Wrecked cars accepted", "Free towing included"],
+  },
+  {
+    slug: "raeford",
+    name: "Raeford",
+    state: "NC",
+    county: "Hoke County",
+    description: "Need to sell a junk car in Raeford? MG Salvage covers Hoke County with professional vehicle removal services. Get a free estimate and schedule your pickup today.",
+    highlights: ["Hoke County coverage", "Free estimates", "Professional service"],
+  },
+  {
+    slug: "fuquay-varina",
+    name: "Fuquay-Varina",
+    state: "NC",
+    county: "Wake County",
+    description: "MG Salvage makes selling your junk car in Fuquay-Varina simple. We offer fair cash offers, free towing, and flexible pickup scheduling throughout the area.",
+    highlights: ["Wake County service", "Flexible scheduling", "Fair cash offers"],
+  },
+  {
+    slug: "burlington",
+    name: "Burlington",
+    state: "NC",
+    county: "Alamance County",
+    description: "Serving Burlington and Alamance County, MG Salvage buys junk and damaged vehicles with free towing and cash paid on the spot. No hassle, no hidden fees.",
+    highlights: ["Alamance County coverage", "Cash on the spot", "Any condition accepted"],
+  },
+  {
+    slug: "asheboro",
+    name: "Asheboro",
+    state: "NC",
+    county: "Randolph County",
+    description: "MG Salvage provides junk car removal services throughout Asheboro and Randolph County. We buy all makes and models regardless of condition and offer free towing.",
+    highlights: ["Randolph County coverage", "All makes and models", "Free towing"],
   },
 ];
 

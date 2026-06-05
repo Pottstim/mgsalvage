@@ -85,7 +85,8 @@ const VERTICALS: Record<string, VerticalData> = {
   },
 };
 
-export default function B2BVertical({ slug }: { slug: string }) {
+export default function B2BVertical({ params }: { params?: { slug?: string } }) {
+  const slug = params?.slug ?? "";
   const data = VERTICALS[slug];
   const schemas = useMemo(() => data ? [
     serviceSchema(`Vehicle Removal for ${data.title}`, data.intro),
@@ -168,7 +169,7 @@ export default function B2BVertical({ slug }: { slug: string }) {
             </div>
 
             <div className="lg:col-span-3">
-              <B2BForm source={`b2b-${data.slug}`} defaultBusinessType={data.businessType} />
+              <B2BForm source={`b2b-${data.slug}`} businessType={data.businessType} />
             </div>
           </div>
         </div>

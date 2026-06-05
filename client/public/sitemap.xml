@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Core pages -->
   <url>
     <loc>https://mgsalvage.com/</loc>
     <changefreq>weekly</changefreq>
@@ -11,20 +14,19 @@
     <loc>https://mgsalvage.com/sell-your-junk-car</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mgsalvage.com/sell-your-junk-car" />
   </url>
   <url>
     <loc>https://mgsalvage.com/junk-car-removal</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mgsalvage.com/junk-car-removal" />
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mgsalvage.com/business-vehicle-removal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mgsalvage.com/business-vehicle-removal" />
   </url>
+
+  <!-- B2B vertical pages -->
   <url>
     <loc>https://mgsalvage.com/business-vehicle-removal/mechanic-shops</loc>
     <changefreq>monthly</changefreq>
@@ -40,20 +42,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Service areas hub -->
   <url>
     <loc>https://mgsalvage.com/service-areas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- City pages (original 5) -->
   <url>
     <loc>https://mgsalvage.com/service-areas/sanford</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mgsalvage.com/service-areas/fayetteville</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mgsalvage.com/service-areas/pittsboro</loc>
@@ -70,10 +76,49 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- City pages (expanded - 8 new) -->
+  <url>
+    <loc>https://mgsalvage.com/service-areas/apex</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/service-areas/holly-springs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/service-areas/dunn</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/service-areas/raeford</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/service-areas/fuquay-varina</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/service-areas/burlington</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/service-areas/asheboro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Informational pages -->
   <url>
     <loc>https://mgsalvage.com/faq</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mgsalvage.com/about</loc>
@@ -83,21 +128,24 @@
   <url>
     <loc>https://mgsalvage.com/reviews</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mgsalvage.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Legal pages (fixed URLs to match actual routes) -->
   <url>
-    <loc>https://mgsalvage.com/privacy</loc>
+    <loc>https://mgsalvage.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://mgsalvage.com/terms</loc>
+    <loc>https://mgsalvage.com/terms-of-service</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
+
 </urlset>
