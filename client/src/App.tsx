@@ -10,7 +10,6 @@ import SellYourJunkCar from "./pages/SellYourJunkCar";
 import JunkCarRemoval from "./pages/JunkCarRemoval";
 import BusinessVehicleRemoval from "./pages/BusinessVehicleRemoval";
 import B2BVertical from "./pages/B2BVertical";
-import BusinessAccount from "./pages/BusinessAccount";
 import ServiceAreas from "./pages/ServiceAreas";
 import CityPage from "./pages/CityPage";
 import FAQ from "./pages/FAQ";
@@ -29,7 +28,6 @@ function Router() {
         <Route path="/junk-car-removal" component={JunkCarRemoval} />
         <Route path="/business-vehicle-removal" component={BusinessVehicleRemoval} />
         <Route path="/business-vehicle-removal/:slug" component={B2BVertical} />
-        <Route path="/business-account" component={BusinessAccount} />
         <Route path="/service-areas" component={ServiceAreas} />
         <Route path="/service-areas/:slug" component={CityPage} />
         <Route path="/faq" component={FAQ} />

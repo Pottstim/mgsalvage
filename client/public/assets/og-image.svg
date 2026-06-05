@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- TODO: Replace this with a real branded OG image (1200x630px PNG) -->
+  <!-- Recommended: Use Canva, Figma, or a similar tool to create a branded image -->
+  <!-- Save as og-image.png in this same /assets/ folder -->
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="6" height="630" fill="#2563eb"/>
+  <!-- Background pattern -->
+  <rect x="800" y="-100" width="600" height="900" rx="80" fill="#1e293b" transform="rotate(15 800 300)"/>
+  <!-- Logo area -->
+  <rect x="80" y="200" width="80" height="80" rx="16" fill="#2563eb"/>
+  <text x="120" y="253" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="white" text-anchor="middle">MG</text>
+  <!-- Headline -->
+  <text x="80" y="340" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="white">MG Salvage</text>
+  <text x="80" y="410" font-family="Arial, sans-serif" font-size="32" font-weight="400" fill="#94a3b8">Cash for Junk Cars · Free Towing · Sanford, NC</text>
+  <!-- CTA badge -->
+  <rect x="80" y="450" width="280" height="56" rx="28" fill="#2563eb"/>
+  <text x="220" y="484" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle">Get a Free Estimate</text>
+  <!-- URL -->
+  <text x="80" y="580" font-family="Arial, sans-serif" font-size="22" fill="#64748b">mgsalvage.com</text>
+</svg>
