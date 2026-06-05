@@ -42,7 +42,7 @@ export default function SellYourJunkCar() {
               <ul className="flex flex-col gap-3 mb-8">
                 {[
                   "Fair cash offers based on current market value",
-                  "Free towing — we come to you",
+                  "Free towing included. We come to you",
                   "Same-day and next-day pickup available",
                   "We buy cars in any condition",
                   "No title? We can often still help",

@@ -33,7 +33,7 @@ export default function About() {
               Who We Are
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              MG Salvage is a professional salvage and vehicle acquisition company serving central North Carolina from our headquarters in Sanford, NC. We buy junk, damaged, and unwanted vehicles from individual owners and businesses — offering fair cash offers, free towing, and a straightforward process you can count on.
+              MG Salvage is a professional salvage and vehicle acquisition company serving central North Carolina from our headquarters in Sanford, NC. We buy junk, damaged, and unwanted vehicles from individual owners and businesses. Fair cash offers, free towing, and a straightforward process you can count on.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               We started MG Salvage because we saw a gap in the market: too many junk car services were unreliable, opaque about pricing, or slow to respond. We built our business on the opposite principles — clear communication, honest offers, and showing up when we say we will.

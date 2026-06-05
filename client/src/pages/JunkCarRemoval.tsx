@@ -36,7 +36,7 @@ export default function JunkCarRemoval() {
               What Is Junk Car Removal?
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Junk car removal is the process of having an unwanted, damaged, or non-running vehicle picked up and taken off your property. At MG Salvage, we make this process free and simple — we come to you, handle all the paperwork, tow the vehicle at no cost, and pay you cash on the spot. If you've been wondering how to clear out space in your driveway, garage, or lot, our professional junk car removal service is the easiest answer. We specialize in assessing the salvage value of your vehicle quickly and ensuring that every step of the removal process is safe, environmentally responsible, and legally compliant. 
+              Junk car removal is the process of having an unwanted, damaged, or non-running vehicle picked up and taken off your property. At MG Salvage, we make this process free and simple: we come to you, handle all the paperwork, tow the vehicle at no cost, and pay you cash on the spot. If you've been wondering how to clear out space in your driveway, garage, or lot, our professional junk car removal service is the easiest answer. We specialize in assessing the salvage value of your vehicle quickly and ensuring that every step of the removal process is safe, environmentally responsible, and legally compliant. 
             </p>
             
             <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
@@ -101,7 +101,7 @@ export default function JunkCarRemoval() {
               <div>
                 <p className="text-sm font-semibold text-foreground mb-1">Vehicle Accessibility</p>
                 <p className="text-sm text-muted-foreground">
-                  For towing, your vehicle needs to be accessible — in a driveway, parking lot, or on the street. If the vehicle is in a tight spot, let us know when you request your estimate so we can plan accordingly.
+                  For towing, your vehicle needs to be accessible: in a driveway, parking lot, or on the street. If the vehicle is in a tight spot, let us know when you request your estimate so we can plan accordingly.
                 </p>
               </div>
             </div>

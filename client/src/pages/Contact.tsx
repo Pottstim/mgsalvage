@@ -36,7 +36,7 @@ export default function Contact() {
                 Get In Touch
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Have a question or ready to sell your junk car? Reach out by phone, email, or fill out one of our forms. We respond quickly — usually within minutes during business hours.
+                Have a question or ready to sell your junk car? Reach out by phone, email, or fill out one of our forms. We respond quickly. Usually within minutes during business hours.
               </p>
 
               <div className="flex flex-col gap-4 mb-8">

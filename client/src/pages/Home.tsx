@@ -143,7 +143,7 @@ function WhoWeServe() {
               Got a junk car, damaged vehicle, or a car that won't start? We'll give you a fair cash offer, pick it up for free, and pay you on the spot. No dealership runaround.
             </p>
             <ul className="flex flex-col gap-2 mb-6">
-              {["Free towing — always", "Cash paid on the spot", "Any condition accepted", "Same-day pickup available"].map((item) => (
+              {["Free towing included with every pickup", "Cash paid on the spot", "Any condition accepted", "Same-day pickup available"].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-foreground">
                   <CheckCircle className="w-4 h-4 text-primary shrink-0" />
                   {item}
@@ -166,7 +166,7 @@ function WhoWeServe() {
               Businesses &amp; Shops
             </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Mechanic shops, body shops, used car dealers, and fleet operators — we handle lot clearing, abandoned vehicle removal, and scheduled pickups so you can focus on your business.
+              Mechanic shops, body shops, used car dealers, and fleet operators. we handle lot clearing, abandoned vehicle removal, and scheduled pickups so you can focus on your business.
             </p>
             <ul className="flex flex-col gap-2 mb-6">
               {["Lot clearing & abandoned vehicles", "Scheduled recurring pickups", "Multiple vehicles at once", "Dedicated business accounts"].map((item) => (
