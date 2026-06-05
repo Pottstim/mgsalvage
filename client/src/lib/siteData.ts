@@ -158,7 +158,7 @@ export const FAQS = [
   },
   {
     question: "What areas do you serve?",
-    answer: "We serve a 50-mile radius from our headquarters in Sanford, NC, including Fayetteville, Pittsboro, Carthage, Lillington, Apex, Holly Springs, and surrounding communities throughout central North Carolina.",
+    answer: "We serve a 50-mile radius from our headquarters in Sanford, NC — covering Fayetteville, Pittsboro, Carthage, Lillington, Apex, Holly Springs, Dunn, Raeford, Fuquay-Varina, Burlington, Asheboro, and surrounding communities throughout central North Carolina.",
   },
   {
     question: "How is the scrap value of my car determined?",
