@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { COMPANY, TESTIMONIALS } from "@/lib/siteData";
+import { COMPANY, TESTIMONIALS, SERVICE_AREAS } from "@/lib/siteData";
 
 interface SEOHeadProps {
   title: string;
@@ -243,6 +243,50 @@ export function aggregateRatingSchema() {
       worstRating: "1",
       ratingCount: count,
       reviewCount: count,
+    },
+  };
+}
+
+export function autoDealerSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AutoDealer",
+    "@id": "https://mgsalvage.com/#business",
+    name: COMPANY.name,
+    description: COMPANY.description,
+    url: "https://mgsalvage.com",
+    telephone: COMPANY.phone,
+    email: COMPANY.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Sanford",
+      addressRegion: "NC",
+      postalCode: "27330",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 35.4799,
+      longitude: -79.1803,
+    },
+    areaServed: SERVICE_AREAS.map((area) => ({
+      "@type": "City",
+      name: area.name,
+      containedInPlace: { "@type": "State", name: "North Carolina" },
+    })),
+    openingHours: "Mo-Sa 08:00-18:00",
+    priceRange: "$$",
+    paymentAccepted: "Cash, Check",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Vehicle Acquisition Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Junk Car Removal" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cash for Junk Cars" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Vehicle Removal" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lot Clearing" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Free Towing" } },
+      ],
     },
   };
 }

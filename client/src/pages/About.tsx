@@ -15,7 +15,7 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About MG Salvage"
+        title="About MG Salvage | Sanford, NC"
         description="MG Salvage is a professional salvage and vehicle acquisition company in Sanford, NC. Learn about our team, values, and process."
         canonical="/about"
         schemas={schemas}

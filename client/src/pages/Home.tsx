@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { COMPANY, HOW_IT_WORKS, SERVICE_AREAS, TESTIMONIALS } from "@/lib/siteData";
 import { Phone, Truck, DollarSign, Clock, Shield, Star, MapPin, ArrowRight, CheckCircle, Building2, Car } from "lucide-react";
-import SEOHead, { localBusinessSchema, aggregateRatingSchema, serviceSchema } from "@/components/SEOHead";
+import SEOHead, { localBusinessSchema, aggregateRatingSchema, serviceSchema, autoDealerSchema } from "@/components/SEOHead";
 import { useMemo } from "react";
 
 function Hero() {
@@ -25,7 +25,7 @@ function Hero() {
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "var(--font-heading)" }}>
             Fast Cash for Your{" "}
-            <span className="text-primary">Junk Car</span>
+            <span className="text-primary">Junk Car</span> in Sanford, NC
             <br />Free Towing. Same Day.
           </h1>
           <p className="text-lg md:text-xl text-white/60 mb-8 max-w-2xl leading-relaxed">
@@ -316,6 +316,7 @@ function FinalCTA() {
 export default function Home() {
   const schemas = useMemo(() => [
     localBusinessSchema(),
+    autoDealerSchema(),
     aggregateRatingSchema(),
     serviceSchema("Junk Car Removal", "Free junk car removal with cash offers and same-day pickup in Sanford, NC and surrounding areas."),
   ], []);

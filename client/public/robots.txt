@@ -4,7 +4,7 @@ Disallow: /api/
 Disallow: /404
 Disallow: /search
 
-# AI crawlers - allow explicitly
+# AI crawlers - allow explicitly for Generative Engine Optimization
 User-agent: GPTBot
 Allow: /
 
@@ -12,6 +12,9 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://mgsalvage.com/sitemap.xml

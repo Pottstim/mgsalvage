@@ -15,7 +15,7 @@ export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Contact Us"
+        title="Contact MG Salvage in Sanford, NC | Free Estimate"
         description="Get in touch with MG Salvage for junk car removal, estimates, and business inquiries. Call, email, or fill out our form."
         canonical="/contact"
         keywords="contact MG Salvage, junk car removal, get estimate, call us"

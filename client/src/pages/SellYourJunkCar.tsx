@@ -17,7 +17,7 @@ export default function SellYourJunkCar() {
   return (
     <>
       <SEOHead
-        title="Sell Your Junk Car | Free Estimate"
+        title="Sell Your Junk Car in Sanford, NC | Free Estimate"
         description="Get a free, no-obligation cash offer for your junk car. Free towing, same-day pickup, and cash on the spot in Sanford, NC and surrounding areas."
         canonical="/sell-your-junk-car"
         schemas={schemas}

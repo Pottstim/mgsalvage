@@ -18,7 +18,7 @@ export default function JunkCarRemoval() {
   return (
     <>
       <SEOHead
-        title="Junk Car Removal | Free Towing"
+        title="Junk Car Removal in Sanford, NC | Free Towing"
         description="Free junk car removal in Sanford, NC and surrounding areas. We handle towing, paperwork, and pay you cash on the spot."
         canonical="/junk-car-removal"
         schemas={schemas}

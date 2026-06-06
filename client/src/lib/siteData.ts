@@ -3,7 +3,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
 export const COMPANY = {
   name: "MG Salvage",
-  // TODO: Replace with your real phone number (also update phoneRaw)
+  // ⚠️ CRITICAL: (919) 555-0123 is a FICTIONAL placeholder.
+  // 555 numbers do not connect to real lines. Replace with your actual
+  // business phone number BEFORE deploying or customers cannot reach you.
+  // Update phoneRaw to match (digits only, no formatting).
   phone: "(919) 555-0123",
   phoneRaw: "9195550123",
   // TODO: Replace with your real business email

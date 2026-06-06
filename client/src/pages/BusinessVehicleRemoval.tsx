@@ -8,7 +8,7 @@ import { CheckCircle, ArrowRight, Wrench, Car, Paintbrush } from "lucide-react";
 
 export default function BusinessVehicleRemoval() {
   const schemas = useMemo(() => [
-    serviceSchema("Business Vehicle Removal", "Reliable vehicle removal for mechanic shops, body shops, dealers, and fleet operators across central NC."),
+    serviceSchema("Business Vehicle Removal", "Reliable vehicle removal for mechanic shops, body shops, dealers, and fleet operators in Sanford, NC and across central North Carolina."),
     breadcrumbSchema([{ name: "Business Vehicle Removal", url: "/business-vehicle-removal" }]),
   ], []);
 
