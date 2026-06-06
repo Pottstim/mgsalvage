@@ -18,6 +18,8 @@ import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import JunkCarValuationGuide from "./pages/JunkCarValuationGuide";
+import NoTitleGuide from "./pages/NoTitleGuide";
 
 function Router() {
   return (
