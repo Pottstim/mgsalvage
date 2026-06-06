@@ -36,6 +36,9 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
+        <Route path="/guides/junk-car-valuation" component={JunkCarValuationGuide} />
+        <Route path="/guides/sell-car-without-title-nc" component={NoTitleGuide} />
+        <Route path="/guides" component={JunkCarValuationGuide} />
         <Route component={NotFound} />
       </Switch>
     </SiteLayout>

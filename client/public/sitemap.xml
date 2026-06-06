@@ -136,7 +136,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Legal pages (fixed URLs to match actual routes) -->
+  <!-- Legal pages -->
   <url>
     <loc>https://mgsalvage.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
@@ -146,6 +146,18 @@
     <loc>https://mgsalvage.com/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <!-- Guides -->
+  <url>
+    <loc>https://mgsalvage.com/guides/junk-car-valuation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mgsalvage.com/guides/sell-car-without-title-nc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
