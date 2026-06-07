@@ -5,6 +5,7 @@ import { COMPANY, TESTIMONIALS } from "@/lib/siteData";
 import SEOHead, { serviceSchema, breadcrumbSchema } from "@/components/SEOHead";
 import { useMemo } from "react";
 import { CheckCircle, Phone, Star } from "lucide-react";
+import { Link } from "wouter";
 
 interface VerticalData {
   title: string;
@@ -173,6 +174,71 @@ export default function B2BVertical() {
             <div className="lg:col-span-3">
               <B2BForm source={`b2b-${data.slug}`} businessType={data.businessType} />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works — B2B Process */}
+      <section className="bg-[oklch(0.13_0.01_250)] py-12 md:py-16">
+        <div className="container max-w-3xl">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-heading)" }}>
+            How Our {data.title} Partnership Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { step: 1, title: "Initial Consultation", desc: `We assess your lot, discuss your pain points, and create a custom removal plan for your ${data.businessType.toLowerCase()}. No obligation.` },
+              { step: 2, title: "Transparent Pricing", desc: "We provide per-vehicle pricing upfront. No hidden fees, no surprises. You know exactly what each removal costs before we show up." },
+              { step: 3, title: "Scheduled Pickup", desc: "Same-day or next-day pickup available. We work around your business hours — early morning, after hours, or weekends." },
+              { step: 4, title: "Payment & Documentation", desc: "Cash paid on pickup. We handle all title transfers, bills of sale, and NC DMV paperwork. You get a clean record of every transaction." },
+            ].map(({ step, title, desc }) => (
+              <div key={step} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">{step}</div>
+                  <h3 className="font-semibold text-white text-sm" style={{ fontFamily: "var(--font-heading)" }}>{title}</h3>
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ROI / Why Partner — prose section */}
+      <section className="py-12 md:py-16">
+        <div className="container max-w-3xl">
+          <h2 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            Why {data.title} Across Central NC Partner with MG Salvage
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Every abandoned vehicle on your lot represents lost revenue — bay space you can't bill for, inventory that isn't moving, and a liability exposure that grows with every month it sits. Across central NC, {data.businessType.toLowerCase()}s partner with MG Salvage because we understand the business pressures you face: tight margins, demanding customers, and the need to keep your operation running smoothly.
+            </p>
+            <p>
+              Our process is designed to be invisible to your workflow. We schedule around your hours, arrive with our own equipment, handle every piece of NC DMV paperwork, and pay you cash on the spot. No invoicing delays, no net-30 terms, no back-and-forth. You call, we show up, we pay, we leave.
+            </p>
+            <p>
+              For shops with recurring needs — whether it's monthly lot clearing or on-demand pickups — we offer priority scheduling and volume pricing. The more vehicles we handle for you, the better the per-vehicle rate. It's a partnership, not a transaction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary py-12">
+        <div className="container text-center">
+          <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+            Ready to Clear Your Lot?
+          </h2>
+          <p className="text-white/80 mb-6 max-w-xl mx-auto">
+            Get a free, no-obligation assessment of your vehicle removal needs. We respond within one business day.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`tel:${COMPANY.phoneRaw}`} className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+              <Phone className="w-4 h-4" /> Call {COMPANY.phone}
+            </a>
+            <Link href="/business-vehicle-removal" className="inline-flex items-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors">
+              Learn About Business Services
+            </Link>
           </div>
         </div>
       </section>
