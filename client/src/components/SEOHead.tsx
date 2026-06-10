@@ -128,10 +128,8 @@ export function localBusinessSchema() {
     name: COMPANY.name,
     description: COMPANY.description,
     url: "https://mgsalvage.com",
-    // TODO: Replace these URLs with your actual verified profile links.
-    // Find your GBP CID at: https://pleper.com/index.php?do=tools&sub=cid
     sameAs: [
-      "https://www.google.com/maps?cid=YOUR_GBP_CID",
+      "https://www.google.com/maps?cid=02251826648692237950",
       "https://www.facebook.com/mgsalvage",
       "https://www.yelp.com/biz/mg-salvage-sanford",
       "https://www.bbb.org/us/nc/sanford/profile/auto-salvage/mg-salvage",
