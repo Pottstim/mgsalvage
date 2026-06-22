@@ -21,7 +21,7 @@ export default function FAQ() {
         schemas={schemas}
       />
       <PageHeader
-        title="Frequently Asked Questions"
+        title="Frequently Asked Questions — Selling Your Junk Car in NC"
         subtitle="Everything you need to know about selling your junk car to MG Salvage."
         breadcrumbs={[{ label: "FAQ" }]}
       />

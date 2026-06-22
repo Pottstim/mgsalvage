@@ -23,7 +23,7 @@ export default function SellYourJunkCar() {
         schemas={schemas}
       />
       <PageHeader
-        title="Sell Your Junk Car"
+        title="Sell Your Junk Car in Sanford, NC | Free Towing — Cash Today"
         subtitle="Get a free, no-obligation cash offer for your junk, damaged, or unwanted vehicle. Free towing included."
         breadcrumbs={[{ label: "Sell Your Junk Car" }]}
       />
@@ -37,7 +37,10 @@ export default function SellYourJunkCar() {
                 Why Sell to MG Salvage?
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                We make selling your junk car as simple as possible. No haggling, no hidden fees, no waiting around. Just a fair cash offer, free towing, and payment on the spot.
+                We make selling your junk car dead simple. Fill out the form, tell us what you've got, we give you a hard offer — not a range — and if you accept it, we show up with a flatbed, pay you cash, and disappear with the car. No haggling, no "let me check with my manager," no 45-minute wait on hold. Just a clean transaction that takes about 30 seconds to start and one visit to finish.
+              </p>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Here's what people tell us they appreciate most: we don't lowball you knowing you have no other options. The offer we quote is the offer you get. Free towing actually means free — we don't subtract a "transport fee" from your payout. And if you've lost your title, we don't turn you away — we walk you through what NC DMV needs and handle the paperwork ourselves.
               </p>
               <ul className="flex flex-col gap-3 mb-8">
                 {[

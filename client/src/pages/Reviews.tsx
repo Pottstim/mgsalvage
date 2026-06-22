@@ -20,7 +20,7 @@ export default function Reviews() {
         schemas={schemas}
       />
       <PageHeader
-        title="Reviews & Testimonials"
+        title="Reviews &amp; Testimonials — Trusted Junk Car Buyer in Central NC"
         subtitle="Hear from real customers and business partners who've worked with MG Salvage."
         breadcrumbs={[{ label: "Reviews" }]}
       />

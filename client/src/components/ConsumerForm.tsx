@@ -160,7 +160,7 @@ export default function ConsumerForm({ source = "consumer-form" }: ConsumerFormP
           </div>
         </div>
         <Button type="submit" className="w-full mt-6" size="lg">
-          Continue <ArrowRight className="w-4 h-4 ml-2" />
+          Get My Offer <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
         <TrustBadges />
       </form>
@@ -209,7 +209,7 @@ export default function ConsumerForm({ source = "consumer-form" }: ConsumerFormP
             <ArrowLeft className="w-4 h-4 mr-2" />Back
           </Button>
           <Button type="submit" className="flex-1" size="lg">
-            Continue <ArrowRight className="w-4 h-4 ml-2" />
+            Get My Offer <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
         <TrustBadges />

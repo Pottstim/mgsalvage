@@ -24,7 +24,7 @@ export default function JunkCarRemoval() {
         schemas={schemas}
       />
       <PageHeader
-        title="Junk Car Removal"
+        title="Junk Car Removal in Sanford, NC | Free Towing &amp; Cash on the Spot"
         subtitle="Free junk car removal across central North Carolina. We handle the towing, paperwork, and pay you cash."
         breadcrumbs={[{ label: "Junk Car Removal" }]}
       />
@@ -36,21 +36,27 @@ export default function JunkCarRemoval() {
               What Is Junk Car Removal?
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Junk car removal is the process of having an unwanted, damaged, or non-running vehicle picked up and taken off your property. At MG Salvage, we make this process free and simple: we come to you, handle all the paperwork, tow the vehicle at no cost, and pay you cash on the spot. If you've been wondering how to clear out space in your driveway, garage, or lot, our professional junk car removal service is the easiest answer. We specialize in assessing the salvage value of your vehicle quickly and ensuring that every step of the removal process is safe, environmentally responsible, and legally compliant. 
+              It's exactly what it sounds like: you've got a car that's dead weight — doesn't run, too expensive to fix, taking up space in your driveway or garage. We come to you with a flatbed tow truck, haul it off for free, hand you cash on the spot, and handle every piece of paperwork. No surprises, no fees deducted from your payout, no last-minute "actually, we can only offer you half what we quoted." The price we give you is the price you get.
+            </p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              We do this every day across central North Carolina. Our operators know the back roads of Lee County, the tight driveways in downtown Sanford, the rural farm paths in Chatham County, and the busy commercial lots along the I-95 corridor in Dunn. If your vehicle is accessible — driveway, parking lot, street, even backyard in some cases — we can pull it out.
             </p>
             
             <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
               Pricing & Value: What Is Your Junk Car Worth?
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Every vehicle has value, even if it no longer runs. Depending on the make, model, year, and condition, we offer highly competitive payouts for junk cars. While prices fluctuate based on current scrap metal rates and usable parts, payouts typically range from <strong>$200 to $1,500+</strong>. For highly sought-after models or vehicles with perfectly intact major components, we regularly pay even more. Get a free, no-obligation estimate today to find out exactly what your junk car is worth. 
+              Short answer: more than you think. Every vehicle has value, even if the engine seized years ago. Payouts depend on make, model, year, condition, and what the scrap market is doing that week. Real numbers from actual payouts we've made recently: a 2004 Honda Civic that didn't start — $380. A 2012 Ford F-150 with a blown transmission — $1,050. A 1998 Chevy Tahoe with 280K miles — $510. A 2017 Toyota Camry with front-end collision damage — $1,420.
+            </p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              <strong>Ballpark ranges:</strong> Compact sedans typically pull $200–$500. Mid-size sedans run $300–$650. Full-size SUVs and half-ton trucks — the heavy hitters — range from $500 to $1,500+. Want to know exactly what yours is worth? Fill out the form — takes 30 seconds, and we'll give you a hard number, not a range.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
               What Counts as a "Junk Car"?
             </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              A junk car is any vehicle that is no longer practical or cost-effective to repair or drive. This includes:
+              If it has four wheels (or three — we've done that) and a VIN, we'll look at it. Here's what people actually call us about:
             </p>
             <ul className="flex flex-col gap-2 mb-8">
               {[

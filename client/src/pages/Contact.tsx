@@ -22,8 +22,8 @@ export default function Contact() {
         schemas={schemas}
       />
       <PageHeader
-        title="Contact Us"
-        subtitle="Get in touch with MG Salvage. We're here to help with junk car removal, estimates, and business inquiries."
+        title="Contact MG Salvage | Get a Free Junk Car Estimate in NC"
+        subtitle="Get in touch with MG Salvage for junk car removal, estimates, and business inquiries. Call, email, or fill out our form."
         breadcrumbs={[{ label: "Contact" }]}
       />
 

@@ -55,6 +55,8 @@ function Hero() {
             </a>
             <span className="w-1 h-1 rounded-full bg-white/30" />
             <span>{COMPANY.hours}</span>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span className="text-amber-400/80">Stop losing money on that sitting car</span>
           </div>
         </div>
       </div>

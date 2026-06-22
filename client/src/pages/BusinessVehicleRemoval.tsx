@@ -42,7 +42,7 @@ export default function BusinessVehicleRemoval() {
         schemas={schemas}
       />
       <PageHeader
-        title="Business Vehicle Removal"
+        title="Business Vehicle Removal | Lot Clearing &amp; Commercial Services in Central NC"
         subtitle="Reliable vehicle removal services for mechanic shops, body shops, dealers, and fleet operators across central NC."
         breadcrumbs={[{ label: "Business Vehicle Removal" }]}
       />
@@ -54,14 +54,20 @@ export default function BusinessVehicleRemoval() {
               Vehicle Removal Built for Business
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              MG Salvage partners with automotive businesses across central North Carolina to provide dependable vehicle removal. Whether you need a one-time lot clearing or ongoing scheduled pickups, we work around your operations to keep things running smoothly. Our commercial services are designed specifically to resolve the logistical headaches of abandoned customer vehicles, insurance write-offs, and unsalable trade-ins. By outsourcing your vehicle removal needs to us, you can clear valuable bay and lot space, avoid the liability of storing neglected vehicles, and focus on your core business.
+              If you run an automotive shop in central NC, you know the pain of abandoned customer vehicles: they take up bay space you could be billing on, they attract complaints, and after 30 days they become a legal headache. We're the solution that shops, dealers, and body shops across Lee, Chatham, and Moore counties use to clear their lots without the paperwork nightmare.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Here's how it actually works for businesses: you call or fill out the form. We come by to assess the vehicles — often same-day or next-day. We give you a per-vehicle price in writing. We show up on schedule with our flatbed, load up, hand you cash or cut a check, and handle every piece of NC DMV paperwork. No invoicing, no net-30, no chasing payments. You get a clean lot and a clean record of every removal for your books.
             </p>
             
             <h3 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>
               B2B Pricing & Payouts
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We understand that maximizing the value of your assets and minimizing hassle is critical to your bottom line. We provide upfront, fair market pricing for every vehicle we remove, paying <strong>$200 to $1,500+ per vehicle</strong> depending on weight, parts value, and condition. For bulk removals and long-term business partnerships, we often negotiate preferential terms or recurring pick-up schedules that streamline your operations and guarantee a steady revenue stream from your junk or abandoned inventory.
+              We pay per vehicle based on weight, parts value, and condition — same formula we use for consumer cars, but with volume pricing for businesses that clear lots regularly. Typical per-vehicle payouts run <strong>$200 to $1,500+</strong>. For shops that schedule recurring pickups (weekly, bi-weekly, monthly), we offer better per-vehicle rates and priority scheduling — meaning you call and we're there within 24 hours, guaranteed.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              A real example: one of our mechanic shop partners in Sanford clears 3-5 abandoned vehicles from their lot every month. Before MG Salvage, they were paying $150 per vehicle to a towing company that charged them to take cars away. With us, they get paid $200–$400 per vehicle instead. That's a swing of $1,000–$2,000 per month in their P&L — and their lot stays clean.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

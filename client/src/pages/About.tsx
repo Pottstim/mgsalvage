@@ -21,7 +21,7 @@ export default function About() {
         schemas={schemas}
       />
       <PageHeader
-        title="About MG Salvage"
+        title="About MG Salvage | Professional Junk Car Buyer in Sanford, NC"
         subtitle="Professional salvage and vehicle acquisition company headquartered in Sanford, NC."
         breadcrumbs={[{ label: "About" }]}
       />

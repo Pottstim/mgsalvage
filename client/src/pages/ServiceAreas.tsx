@@ -20,7 +20,7 @@ export default function ServiceAreas() {
         schemas={schemas}
       />
       <PageHeader
-        title="Service Areas"
+        title="Service Areas | Junk Car Removal Across Central NC"
         subtitle={`MG Salvage serves a ${COMPANY.serviceRadius} radius from our headquarters in Sanford, NC. We provide junk car removal and cash offers throughout central North Carolina.`}
         breadcrumbs={[{ label: "Service Areas" }]}
       />
